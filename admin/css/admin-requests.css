@@ -1,0 +1,376 @@
+/* =====================================================
+   NOJA'S CREATIONS
+   ADMIN REQUESTS & DASHBOARD REQUEST COMPONENTS
+===================================================== */
+
+
+/* =====================================================
+   REQUEST DASHBOARD SECTION
+===================================================== */
+
+.dashboard-request-section,
+.dashboard-recent-requests {
+    margin-top: 35px;
+}
+
+.dashboard-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section-header h2 {
+    margin: 6px 0 0;
+}
+
+.dashboard-view-all {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   REQUEST STATISTICS
+===================================================== */
+
+.dashboard-request-stats {
+    display: grid;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.dashboard-request-card {
+    padding: 24px;
+    border-radius: 14px;
+    background: var(--dark-card, #151515);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.dashboard-request-card:hover {
+    transform: translateY(-2px);
+}
+
+.dashboard-request-card-label {
+    display: block;
+    font-size: 13px;
+    opacity: 0.65;
+    margin-bottom: 12px;
+}
+
+.dashboard-request-card strong {
+    display: block;
+    font-size: 32px;
+}
+
+
+/* =====================================================
+   STATUS COLORS
+===================================================== */
+
+.dashboard-request-card.pending strong {
+    color: #ffc107;
+}
+
+.dashboard-request-card.reviewed strong {
+    color: #2196f3;
+}
+
+.dashboard-request-card.completed strong {
+    color: #4caf50;
+}
+
+.dashboard-request-card.cancelled strong {
+    color: #f44336;
+}
+
+
+/* =====================================================
+   RECENT REQUESTS
+===================================================== */
+
+.dashboard-recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-recent-request {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 18px 20px;
+
+    border-radius: 12px;
+
+    background: var(--dark-card, #151515);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dashboard-recent-request:hover {
+    transform: translateY(-1px);
+}
+
+.dashboard-recent-request-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dashboard-recent-request-info strong {
+    font-size: 15px;
+}
+
+.dashboard-recent-request-info span {
+    font-size: 13px;
+}
+
+.dashboard-recent-request-info small {
+    opacity: 0.55;
+}
+
+.dashboard-recent-request-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+
+/* =====================================================
+   REQUEST STATUS
+===================================================== */
+
+.dashboard-request-status {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: capitalize;
+}
+
+.dashboard-request-status.pending {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+}
+
+.dashboard-request-status.reviewed {
+    background: rgba(33, 150, 243, 0.15);
+    color: #2196f3;
+}
+
+.dashboard-request-status.completed {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+}
+
+.dashboard-request-status.cancelled {
+    background: rgba(244, 67, 54, 0.15);
+    color: #f44336;
+}
+
+
+/* =====================================================
+   LOADING / EMPTY / ERROR
+===================================================== */
+
+.dashboard-request-loading,
+.dashboard-request-empty,
+.dashboard-request-error {
+    padding: 30px;
+    text-align: center;
+    opacity: 0.65;
+}
+
+.dashboard-request-error {
+    color: #f44336;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-request-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .dashboard-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-request-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-recent-request {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-recent-request-meta {
+        align-items: flex-start;
+    }
+
+}
+/* =====================================================
+   CUSTOMER CONTACT ACTIONS
+===================================================== */
+
+.request-contact-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+}
+
+
+.request-contact-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 42px;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.request-contact-btn:hover {
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+}
+
+
+.request-contact-btn span {
+
+    font-size: 16px;
+
+}
+
+
+/* =====================================================
+   EMAIL
+===================================================== */
+
+.request-contact-btn.email {
+
+    background:
+        rgba(33, 150, 243, 0.12);
+
+    color: #2196f3;
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.request-contact-btn.whatsapp {
+
+    background:
+        rgba(76, 175, 80, 0.12);
+
+    color: #4caf50;
+
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+.request-contact-btn.phone {
+
+    background:
+        rgba(255, 193, 7, 0.12);
+
+    color: #ffc107;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .request-contact-actions {
+
+        flex-direction: column;
+
+    }
+
+    .request-contact-btn {
+
+        width: 100%;
+
+    }
+
+}

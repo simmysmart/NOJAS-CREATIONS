@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NOJA'S CREATIONS — Product Management"
+    >
+
+    <meta
+        name="author"
+        content="NOJA'S CREATIONS"
+    >
+
+    <title>Products | NOJA'S CREATIONS Admin</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         PUBLIC WEBSITE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+
+    <!-- =====================================================
+         ADMIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/admin-animations.css">
+    <link rel="stylesheet" href="./css/admin-products.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+<!-- =========================================================
+     ADMIN HEADER
+========================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-left">
+
+        <button
+            class="admin-menu-toggle"
+            id="adminMenuToggle"
+            type="button"
+            aria-label="Open admin menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <a
+            href="index.html"
+            class="admin-logo"
+        >
+            NOJA'S
+            <span>CREATIONS</span>
+        </a>
+
+
+        <span class="admin-header-divider"></span>
+
+        <span class="admin-section-title">
+            ADMINISTRATION
+        </span>
+
+    </div>
+
+
+    <div class="admin-header-right">
+
+        <a
+            href="../index.html"
+            class="admin-view-site"
+        >
+            View Website
+            <span>↗</span>
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     ADMIN SIDEBAR
+========================================================== -->
+
+<aside
+    class="admin-sidebar"
+    id="adminSidebar"
+>
+
+    <div class="admin-sidebar-inner">
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="admin-profile">
+
+            <div class="admin-profile-avatar">
+                N
+            </div>
+
+            <div class="admin-profile-info">
+
+                <strong>
+                    NOJA'S ADMIN
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="admin-navigation">
+
+            <p class="admin-nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="index.html"
+                class="admin-nav-link"
+            >
+                <span class="admin-nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="products.html"
+                class="admin-nav-link active"
+            >
+                <span class="admin-nav-icon">◈</span>
+                <span>Products</span>
+            </a>
+
+            <a
+    href="dashboard.html"
+    class="admin-nav-link"
+>
+    <span class="admin-nav-icon">⌂</span>
+
+    <span>
+        Dashboard
+    </span>
+</a>
+
+
+            <a
+                href="collections.html"
+                class="admin-nav-link"
+            >
+                <span class="admin-nav-icon">◇</span>
+                <span>Collections</span>
+            </a>
+
+
+            <a
+                href="messages.html"
+                class="admin-nav-link"
+            >
+                <span class="admin-nav-icon">✉</span>
+                <span>Messages</span>
+            </a>
+
+
+
+            <p class="admin-nav-label admin-nav-label-spaced">
+                WEBSITE
+            </p>
+
+
+            <a
+                href="../index.html"
+                class="admin-nav-link"
+            >
+                <span class="admin-nav-icon">↗</span>
+                <span>View Website</span>
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="admin-nav-link"
+            >
+                <span class="admin-nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+
+        <!-- LOGOUT -->
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                class="admin-logout"
+                id="logoutButton"
+            >
+                <span class="admin-nav-icon">←</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     ADMIN MAIN CONTENT
+========================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- =====================================================
+         PAGE INTRO
+    ====================================================== -->
+
+    <section class="admin-page-intro products-page-intro">
+
+        <div>
+
+            <span class="admin-eyebrow">
+                CONTENT MANAGEMENT
+            </span>
+
+            <h1>
+                Products
+            </h1>
+
+            <p>
+                Create, manage and publish the fashion pieces
+                displayed across NOJA'S CREATIONS.
+            </p>
+
+        </div>
+
+
+        <div class="products-intro-action">
+
+            <button
+                type="button"
+                class="admin-primary-button"
+                id="openProductForm"
+            >
+                <span>+</span>
+                Add New Product
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCT SUMMARY
+    ====================================================== -->
+
+    <section class="product-summary-grid">
+
+
+        <article class="product-summary-card">
+
+            <span class="product-summary-label">
+                Total Products
+            </span>
+
+            <strong id="totalProducts">
+                0
+            </strong>
+
+        </article>
+
+
+        <article class="product-summary-card">
+
+            <span class="product-summary-label">
+                Published
+            </span>
+
+            <strong id="publishedProducts">
+                0
+            </strong>
+
+        </article>
+
+
+        <article class="product-summary-card">
+
+            <span class="product-summary-label">
+                Drafts
+            </span>
+
+            <strong id="draftProducts">
+                0
+            </strong>
+
+        </article>
+
+
+        <article class="product-summary-card">
+
+            <span class="product-summary-label">
+                Featured
+            </span>
+
+            <strong id="featuredProducts">
+                0
+            </strong>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCT TOOLBAR
+    ====================================================== -->
+
+    <section class="products-toolbar">
+
+        <div class="products-search">
+
+            <span class="products-search-icon">
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="products-filter-group">
+
+            <label
+                for="productCategoryFilter"
+                class="products-filter-label"
+            >
+                Category
+            </label>
+
+            <select
+                id="productCategoryFilter"
+                class="products-select"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="dresses">
+                    Dresses
+                </option>
+
+                <option value="native">
+                    Native
+                </option>
+
+                <option value="corporate">
+                    Corporate
+                </option>
+
+                <option value="evening">
+                    Evening Wear
+                </option>
+
+                <option value="bridal">
+                    Bridal
+                </option>
+
+                <option value="casual">
+                    Casual
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- STATUS FILTER -->
+
+        <div class="products-filter-group">
+
+            <label
+                for="productStatusFilter"
+                class="products-filter-label"
+            >
+                Status
+            </label>
+
+            <select
+                id="productStatusFilter"
+                class="products-select"
+            >
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="published">
+                    Published
+                </option>
+
+                <option value="draft">
+                    Draft
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCT CONTENT AREA
+    ====================================================== -->
+
+    <section class="products-management-layout">
+
+
+        <!-- =================================================
+             PRODUCT LIST
+        ================================================== -->
+
+        <div class="products-list-panel">
+
+
+            <div class="products-panel-heading">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        CATALOGUE
+                    </span>
+
+                    <h2>
+                        All Products
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="products-result-count"
+                    id="productResultCount"
+                >
+                    0 products
+                </span>
+
+            </div>
+
+
+
+            <!-- PRODUCT TABLE -->
+
+            <div class="products-table-wrapper">
+
+                <table class="products-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Collection
+                            </th>
+
+                            <th>
+                                Price
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Featured
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="productsTableBody">
+
+                        <!-- Products will be inserted here by JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="products-empty-state"
+                    id="productsEmptyState"
+                >
+
+                    <div class="products-empty-icon">
+                        ◈
+                    </div>
+
+                    <h3>
+                        No products yet
+                    </h3>
+
+                    <p>
+                        Your product catalogue is currently empty.
+                        Add your first fashion piece to get started.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="admin-secondary-button"
+                        id="emptyAddProduct"
+                    >
+                        Add First Product
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PRODUCT PREVIEW
+        ================================================== -->
+
+        <aside class="product-preview-panel">
+
+            <div class="products-panel-heading">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        PREVIEW
+                    </span>
+
+                    <h2>
+                        Product Preview
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="product-preview"
+                id="productPreview"
+            >
+
+                <div class="product-preview-image">
+
+                    <div class="product-preview-placeholder">
+                        <span>NOJA'S</span>
+                        <small>CREATIONS</small>
+                    </div>
+
+                </div>
+
+
+                <div class="product-preview-content">
+
+                    <span
+                        class="product-preview-category"
+                        id="previewCategory"
+                    >
+                        CATEGORY
+                    </span>
+
+                    <h3 id="previewName">
+                        Product Name
+                    </h3>
+
+                    <p id="previewDescription">
+                        Product description will appear here.
+                    </p>
+
+
+                    <div class="product-preview-bottom">
+
+                        <strong id="previewPrice">
+                            ₦0
+                        </strong>
+
+                        <span
+                            class="product-preview-status"
+                            id="previewStatus"
+                        >
+                            Draft
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCT FORM
+         Hidden until Add Product is clicked.
+    ====================================================== -->
+
+    <section
+        class="product-form-section"
+        id="productFormSection"
+        hidden
+    >
+
+        <div class="product-form-heading">
+
+            <div>
+
+                <span class="admin-eyebrow">
+                    PRODUCT EDITOR
+                </span>
+
+                <h2 id="productFormTitle">
+                    Add New Product
+                </h2>
+
+                <p>
+                    Add the information customers will see on
+                    the NOJA'S CREATIONS website.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="product-form-close"
+                id="closeProductForm"
+                aria-label="Close product form"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form
+            id="productForm"
+            class="product-form"
+            enctype="multipart/form-data"
+        >
+
+
+            <!-- =================================================
+                 IMAGE
+            ================================================== -->
+
+            <div class="product-form-image-column">
+
+                <div class="product-image-upload">
+
+                    <div
+                        class="product-image-preview"
+                        id="productImagePreview"
+                    >
+
+                        <div class="product-upload-placeholder">
+
+                            <span>
+                                +
+                            </span>
+
+                            <strong>
+                                Product Image
+                            </strong>
+
+                            <small>
+                                JPG, PNG or WEBP
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <label
+                        for="productImage"
+                        class="product-upload-button"
+                    >
+                        Choose Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImage"
+                        name="product_image"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                    <small class="product-upload-note">
+                        Recommended: high-quality fashion photography.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM FIELDS
+            ================================================== -->
+
+            <div class="product-form-fields">
+
+
+                <!-- PRODUCT NAME -->
+
+                <div class="admin-form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        name="product_name"
+                        placeholder="e.g. Royal Evening Dress"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="admin-form-group">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        name="product_description"
+                        rows="5"
+                        placeholder="Describe the design, fabric, style and details..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CATEGORY + COLLECTION
+                ================================================== -->
+
+                <div class="admin-form-row">
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="admin-form-group">
+
+                        <label for="productCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="productCategory"
+                            name="product_category"
+                            required
+                        >
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="dresses">
+                                Dresses
+                            </option>
+
+                            <option value="native">
+                                Native
+                            </option>
+
+                            <option value="corporate">
+                                Corporate
+                            </option>
+
+                            <option value="evening">
+                                Evening Wear
+                            </option>
+
+                            <option value="bridal">
+                                Bridal
+                            </option>
+
+                            <option value="casual">
+                                Casual
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- COLLECTION -->
+
+                    <div class="admin-form-group">
+
+                        <label for="product_collection">
+                            Collection
+                        </label>
+
+                        <select
+                            id="product_collection"
+                            name="product_collection"
+                            required
+                        >
+
+                            <option value="">
+                                Select Collection
+                            </option>
+
+                            <option value="signature">
+                                Signature Collection
+                            </option>
+
+                            <option value="traditional">
+                                Traditional Wear
+                            </option>
+
+                            <option value="ankara">
+                                Ankara Collection
+                            </option>
+
+                            <option value="evening">
+                                Evening Wear
+                            </option>
+
+                            <option value="bridal">
+                                Bridal Collection
+                            </option>
+
+                            <option value="agbada">
+                                Agbada Collection
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRICE + STATUS
+                ================================================== -->
+
+                <div class="admin-form-row">
+
+
+                    <!-- PRICE -->
+
+                    <div class="admin-form-group">
+
+                        <label for="productPrice">
+                            Price
+                        </label>
+
+                        <div class="admin-input-prefix">
+
+                            <span>
+                                ₦
+                            </span>
+
+                            <input
+                                type="number"
+                                id="productPrice"
+                                name="product_price"
+                                min="0"
+                                step="0.01"
+                                placeholder="0.00"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="admin-form-group">
+
+                        <label for="productStatus">
+                            Publication Status
+                        </label>
+
+                        <select
+                            id="productStatus"
+                            name="product_status"
+                        >
+
+                            <option value="draft">
+                                Draft
+                            </option>
+
+                            <option value="published">
+                                Published
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FEATURED PRODUCT
+                ================================================== -->
+
+                <div class="admin-form-group product-featured-group">
+
+                    <label>
+                        Featured Product
+                    </label>
+
+                    <label class="admin-toggle">
+
+                        <input
+                            type="checkbox"
+                            id="productFeatured"
+                            name="product_featured"
+                        >
+
+                        <span class="admin-toggle-slider"></span>
+
+                        <span class="admin-toggle-text">
+                            Show in featured section
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FORM ACTIONS
+                ================================================== -->
+
+                <div class="product-form-actions">
+
+                    <button
+                        type="button"
+                        class="admin-secondary-button"
+                        id="cancelProductForm"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="admin-primary-button"
+                    >
+                        Save Product
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ADMIN FOOTER
+         This is ONLY the admin footer.
+         Public website footer is untouched.
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <p>
+            © <span id="adminYear"></span>
+            NOJA'S CREATIONS.
+            All rights reserved.
+        </p>
+
+        <span>
+            Product Management
+        </span>
+
+    </footer>
+
+</main>
+
+
+
+<!-- =========================================================
+     ADMIN JAVASCRIPT
+========================================================== -->
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/admin-products.js"></script>
+
+</body>
+</html>

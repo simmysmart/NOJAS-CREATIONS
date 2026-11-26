@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+    - name: "products"
+    label: "Products / Dresses"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - {label: "Product Name", name: "title", widget: "string", required: true}
+            - {label: "Price (Naira)", name: "price", widget: "number", required: true}
+            - {label: "Category", name: "category", widget: "select", options: ["Signature", "Ankara", "Traditional Wear", "Evening Wear", "Bridal", "Agbada", "Latest Designs"], required: true}
+            - {label: "Photo", name: "image", widget: "image", required: true}
+            - {label: "Description", name: "body", widget: "markdown", required: false}
+            - {label: "Available?", name: "available", widget: "boolean", default: true}
+    - name: "gallery"
+    label: "Gallery Photos"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Photo", name: "image", widget: "image", required: true}
+            - {label: "Category", name: "category", widget: "select", options: ["Ankara", "Agbada", "Bridal", "Traditional", "Evening", "Signature"]}

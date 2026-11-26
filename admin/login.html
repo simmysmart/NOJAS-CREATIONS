@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <meta
+        name="description"
+        content="NOJA'S CREATIONS Admin Login"
+    >
+
+    <title>Admin Login | NOJA'S CREATIONS</title>
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         LOGIN STYLES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin-login.css"
+    >
+
+</head>
+
+
+<body class="admin-login-page">
+
+
+    <!-- =====================================================
+         LOGIN CONTAINER
+    ====================================================== -->
+
+    <main class="admin-login-container">
+
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <div class="admin-login-brand">
+
+            <a
+                href="../index.html"
+                class="login-logo"
+            >
+
+                <span class="login-logo-main">
+                    NOJA'S
+                </span>
+
+                <span class="login-logo-sub">
+                    CREATIONS
+                </span>
+
+            </a>
+
+
+            <span class="login-brand-line"></span>
+
+            <p>
+                ADMINISTRATION
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LOGIN CARD
+        ================================================== -->
+
+        <section class="admin-login-card">
+
+
+            <div class="login-card-header">
+
+                <span class="login-eyebrow">
+                    PRIVATE ACCESS
+                </span>
+
+                <h1>
+                    Welcome Back
+                </h1>
+
+                <p>
+                    Sign in to manage your NOJA'S CREATIONS
+                    website.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
+
+            <form
+                id="adminLoginForm"
+                class="admin-login-form"
+                novalidate
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="login-field">
+
+                    <label for="adminEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="login-field">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ERROR MESSAGE -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="login-submit"
+                >
+
+                    <span class="login-button-text">
+                        Sign In
+                    </span>
+
+                    <span
+                        class="login-button-loader"
+                        aria-hidden="true"
+                    >
+                        Signing In...
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- =================================================
+                 BACK TO WEBSITE
+            ================================================== -->
+
+            <a
+                href="../index.html"
+                class="back-to-site"
+            >
+                ← Back to Website
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="login-footer">
+
+            <span>
+                © <span id="loginYear"></span>
+                NOJA'S CREATIONS
+            </span>
+
+            <span>
+                Secure Administration
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/admin-login.js"></script>
+
+</body>
+
+</html>

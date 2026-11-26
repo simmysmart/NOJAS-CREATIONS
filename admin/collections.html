@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore NOJA'S CREATIONS collections — Signature, Traditional, Ankara, Evening, Bridal, Agbada and Latest Designs."
+    >
+
+    <meta
+        name="keywords"
+        content="NOJA'S CREATIONS, fashion collections, African fashion, Ankara, traditional wear, bridal, agbada, evening wear"
+    >
+
+    <meta
+        name="author"
+        content="NOJA'S CREATIONS"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>
+        Collections | NOJA'S CREATIONS
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="../assets/images/favicon.jpg"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+
+    <!-- =====================================================
+         COMPONENT CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/components/navbar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/buttons.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/cards.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/product.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/forms.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/gallery.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/footer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components/modal.css"
+    >
+
+
+    <!-- =====================================================
+         ANIMATIONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/animations.css"
+    >
+
+
+    <!-- =====================================================
+         RESPONSIVE
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         COLLECTIONS PAGE STYLES
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           COLLECTIONS HERO
+        ================================================== */
+
+        .collections-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #080808;
+        }
+
+        .collections-hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .collections-hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .collections-hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 8, 8, 0.94) 0%,
+                    rgba(8, 8, 8, 0.72) 45%,
+                    rgba(8, 8, 8, 0.30) 100%
+                );
+        }
+
+        .collections-hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(1200px, 90%);
+            margin: 0 auto;
+            padding: 160px 0 100px;
+        }
+
+        .collections-hero-label {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            opacity: 0.75;
+        }
+
+        .collections-hero-content h1 {
+            max-width: 800px;
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 7vw, 96px);
+            font-weight: 400;
+            line-height: 0.98;
+        }
+
+        .collections-hero-content h1 em {
+            font-style: italic;
+        }
+
+        .collections-hero-description {
+            max-width: 620px;
+            margin: 30px 0 0;
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.78;
+        }
+
+
+        /* =================================================
+           COLLECTION INDEX
+        ================================================== */
+
+        .collection-index {
+            padding: 110px 0;
+            background: #080808;
+        }
+
+        .collection-index-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .collection-index-item {
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+            background: #080808;
+            text-decoration: none;
+            color: inherit;
+            transition:
+                background 0.35s ease,
+                transform 0.35s ease;
+        }
+
+        .collection-index-item:hover {
+            background: #111;
+        }
+
+        .collection-index-number {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            opacity: 0.5;
+        }
+
+        .collection-index-item h3 {
+            margin: 35px 0 0;
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .collection-index-item span:last-child {
+            align-self: flex-end;
+            font-size: 20px;
+            opacity: 0.6;
+        }
+
+
+        /* =================================================
+           COLLECTION INTRO
+        ================================================== */
+
+        .collections-intro {
+            padding: 120px 0;
+            background: #f4f1eb;
+            color: #080808;
+        }
+
+        .collections-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: end;
+        }
+
+        .collections-intro h2 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5vw, 72px);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .collections-intro h2 em {
+            font-style: italic;
+        }
+
+        .collections-intro-text {
+            max-width: 540px;
+        }
+
+        .collections-intro-text p {
+            margin: 0 0 30px;
+            font-size: 16px;
+            line-height: 1.9;
+            opacity: 0.75;
+        }
+
+
+        /* =================================================
+           COLLECTION SECTIONS
+        ================================================== */
+
+        .collection-section {
+            padding: 120px 0;
+            background: #080808;
+        }
+
+        .collection-section:nth-child(even) {
+            background: #0d0d0d;
+        }
+
+        .collection-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            margin-bottom: 55px;
+        }
+
+        .collection-heading-left {
+            max-width: 700px;
+        }
+
+        .collection-number {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            opacity: 0.5;
+        }
+
+        .collection-heading p {
+            margin: 0 0 10px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .collection-heading h2 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .collection-heading h2 em {
+            font-style: italic;
+        }
+
+        .collection-description {
+            max-width: 430px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.65;
+        }
+
+
+        /* =================================================
+           COLLECTION GRID
+        ================================================== */
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .collection-card:first-child {
+            grid-row: span 2;
+        }
+
+        .collection-card-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 430px;
+            overflow: hidden;
+        }
+
+        .collection-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .collection-card:hover .collection-card-image img {
+            transform: scale(1.05);
+        }
+
+        .collection-card-overlay {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 60px 25px 25px;
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.85)
+                );
+        }
+
+        .collection-card-overlay span {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .collection-card-overlay h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+
+        /* =================================================
+           FEATURED COLLECTION
+        ================================================== */
+
+        .featured-collection {
+            padding: 140px 0;
+            background: #f4f1eb;
+            color: #080808;
+        }
+
+        .featured-collection-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .featured-collection-image {
+            overflow: hidden;
+        }
+
+        .featured-collection-image img {
+            width: 100%;
+            height: 680px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .featured-collection-content {
+            max-width: 500px;
+        }
+
+        .featured-collection-content span {
+            display: block;
+            margin-bottom: 18px;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.55;
+        }
+
+        .featured-collection-content h2 {
+            margin: 0 0 25px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 5vw, 70px);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .featured-collection-content h2 em {
+            font-style: italic;
+        }
+
+        .featured-collection-content p {
+            margin: 0 0 35px;
+            font-size: 15px;
+            line-height: 1.9;
+            opacity: 0.7;
+        }
+
+
+        /* =================================================
+           CUSTOM DESIGN CTA
+        ================================================== */
+
+        .collections-cta {
+            position: relative;
+            padding: 150px 20px;
+            text-align: center;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .collections-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .collections-cta-content > span {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .collections-cta-content h2 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 6vw, 80px);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .collections-cta-content h2 em {
+            font-style: italic;
+        }
+
+        .collections-cta-content p {
+            max-width: 550px;
+            margin: 30px auto 40px;
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            .collection-index-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .collections-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .collection-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .collection-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .collection-card:first-child {
+                grid-row: auto;
+            }
+
+            .featured-collection-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .featured-collection-image img {
+                height: 560px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .collections-hero {
+                min-height: 75vh;
+            }
+
+            .collections-hero-content {
+                padding: 140px 0 80px;
+            }
+
+            .collections-hero-description {
+                font-size: 14px;
+            }
+
+            .collection-index,
+            .collections-intro,
+            .collection-section,
+            .featured-collection {
+                padding: 80px 0;
+            }
+
+            .collection-index-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-index-item {
+                min-height: 150px;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-card-image {
+                min-height: 480px;
+            }
+
+            .featured-collection-image img {
+                height: 470px;
+            }
+
+            .collections-cta {
+                padding: 100px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE LOADER
+    ====================================================== -->
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+        aria-hidden="true"
+    >
+
+        <div class="loader-logo">
+            NOJA'S
+        </div>
+
+        <div class="loader-line"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="site-header"
+        id="siteHeader"
+    >
+
+        <nav
+            class="navbar"
+            aria-label="Main navigation"
+        >
+
+
+            <!-- =================================================
+                 LOGO
+            ================================================== -->
+
+            <a
+                href="../index.html"
+                class="brand-logo"
+                aria-label="NOJA'S CREATIONS Home"
+            >
+
+                <img
+                    src="../assets/images/logo.jpg"
+                    alt="NOJA'S CREATIONS"
+                >
+
+            </a>
+
+
+            <!-- =================================================
+                 DESKTOP NAVIGATION
+            ================================================== -->
+
+            <ul class="nav-menu">
+
+
+                <!-- HOME -->
+
+                <li class="nav-item">
+
+                    <a
+                        href="../index.html"
+                        class="nav-link"
+                    >
+                        Home
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        href="about.html"
+                        class="nav-link"
+                        aria-haspopup="true"
+                    >
+
+                        About
+
+                        <span
+                            class="dropdown-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="about.html">
+                            Our Story
+                        </a>
+
+                        <a href="about.html#philosophy">
+                            Our Philosophy
+                        </a>
+
+                        <a href="about.html#designer">
+                            The Designer
+                        </a>
+
+                    </div>
+
+                </li>
+
+
+                <!-- COLLECTIONS -->
+
+                <li class="nav-item mega-dropdown">
+
+                    <a
+                        href="collections.html"
+                        class="nav-link active"
+                        aria-haspopup="true"
+                    >
+
+                        Collections
+
+                        <span
+                            class="dropdown-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+
+                    </a>
+
+
+                    <div class="mega-menu">
+
+
+                        <!-- MEGA MENU INTRO -->
+
+                        <div class="mega-menu-intro">
+
+                            <span class="menu-label">
+                                EXPLORE
+                            </span>
+
+
+                            <h3>
+                                Our
+                                <em>Collections</em>
+                            </h3>
+
+
+                            <p>
+                                Discover carefully crafted designs
+                                created to express confidence,
+                                elegance and individuality.
+                            </p>
+
+
+                            <a
+                                href="collections.html"
+                                class="menu-view-all"
+                            >
+
+                                View All Collections
+
+                                <span aria-hidden="true">
+                                    ↗
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- MEGA MENU LINKS -->
+
+                        <div class="mega-menu-links">
+
+                            <a href="collections.html#signature">
+                                <span>01</span>
+                                Signature Collection
+                            </a>
+
+                            <a href="collections.html#traditional">
+                                <span>02</span>
+                                Traditional Wear
+                            </a>
+
+                            <a href="collections.html#ankara">
+                                <span>03</span>
+                                Ankara Collection
+                            </a>
+
+                            <a href="collections.html#evening">
+                                <span>04</span>
+                                Evening Wear
+                            </a>
+
+                            <a href="collections.html#bridal">
+                                <span>05</span>
+                                Bridal Collection
+                            </a>
+
+                            <a href="collections.html#agbada">
+                                <span>06</span>
+                                Agbada Collection
+                            </a>
+
+                            <a href="collections.html#latest">
+                                <span>07</span>
+                                Latest Designs
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- CUSTOM DESIGN -->
+
+                <li class="nav-item">
+
+                    <a
+                        href="custom-design.html"
+                        class="nav-link"
+                    >
+                        Custom Design
+                    </a>
+
+                </li>
+
+
+                <!-- GALLERY -->
+
+                <li class="nav-item">
+
+                    <a
+                        href="gallery.html"
+                        class="nav-link"
+                    >
+                        Gallery
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        href="contact.html"
+                        class="nav-link"
+                        aria-haspopup="true"
+                    >
+
+                        Contact
+
+                        <span
+                            class="dropdown-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a
+                            href="https://wa.me/2349150481950"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            WhatsApp
+                        </a>
+
+                        <a href="mailto:nojascreations@gmail.com">
+                            Email Us
+                        </a>
+
+                        <a href="tel:+2349150481950">
+                            Call Us
+                        </a>
+
+                        <a href="contact.html">
+                            Send Enquiry
+                        </a>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+
+            <!-- =================================================
+                 DESKTOP CTA
+            ================================================== -->
+
+            <a
+                href="custom-design.html"
+                class="nav-cta"
+            >
+
+                <span>
+                    Book a Design
+                </span>
+
+                <strong aria-hidden="true">
+                    ↗
+                </strong>
+
+            </a>
+
+
+            <!-- =================================================
+                 MOBILE MENU BUTTON
+            ================================================== -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </nav>
+
+
+        <!-- =====================================================
+             MOBILE NAVIGATION
+        ====================================================== -->
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-hidden="true"
+        >
+
+            <div class="mobile-menu-inner">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="../index.html"
+                    class="mobile-link"
+                >
+                    Home
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <button
+                    class="mobile-dropdown-toggle"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        About
+                    </span>
+
+                    <strong aria-hidden="true">
+                        +
+                    </strong>
+
+                </button>
+
+
+                <div class="mobile-dropdown-content">
+
+                    <a href="about.html">
+                        Our Story
+                    </a>
+
+                    <a href="about.html#philosophy">
+                        Our Philosophy
+                    </a>
+
+                    <a href="about.html#designer">
+                        The Designer
+                    </a>
+
+                </div>
+
+
+                <!-- COLLECTIONS -->
+
+                <button
+                    class="mobile-dropdown-toggle"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Collections
+                    </span>
+
+                    <strong aria-hidden="true">
+                        +
+                    </strong>
+
+                </button>
+
+
+                <div class="mobile-dropdown-content">
+
+                    <a href="collections.html#signature">
+                        Signature Collection
+                    </a>
+
+                    <a href="collections.html#traditional">
+                        Traditional Wear
+                    </a>
+
+                    <a href="collections.html#ankara">
+                        Ankara Collection
+                    </a>
+
+                    <a href="collections.html#evening">
+                        Evening Wear
+                    </a>
+
+                    <a href="collections.html#bridal">
+                        Bridal Collection
+                    </a>
+
+                    <a href="collections.html#agbada">
+                        Agbada Collection
+                    </a>
+
+                    <a href="collections.html#latest">
+                        Latest Designs
+                    </a>
+
+                </div>
+
+
+                <!-- CUSTOM DESIGN -->
+
+                <a
+                    href="custom-design.html"
+                    class="mobile-link"
+                >
+                    Custom Design
+                </a>
+
+
+                <!-- GALLERY -->
+
+                <a
+                    href="gallery.html"
+                    class="mobile-link"
+                >
+                    Gallery
+                </a>
+
+
+                <!-- CONTACT -->
+
+                <button
+                    class="mobile-dropdown-toggle"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Contact
+                    </span>
+
+                    <strong aria-hidden="true">
+                        +
+                    </strong>
+
+                </button>
+
+
+                <div class="mobile-dropdown-content">
+
+                    <a
+                        href="https://wa.me/2349150481950"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+
+                    <a href="mailto:nojascreations@gmail.com">
+                        Email Us
+                    </a>
+
+                    <a href="tel:+2349150481950">
+                        Call Us
+                    </a>
+
+                    <a href="contact.html">
+                        Send Enquiry
+                    </a>
+
+                </div>
+
+
+                <!-- MOBILE CTA -->
+
+                <a
+                    href="custom-design.html"
+                    class="mobile-book-button"
+                >
+
+                    <span>
+                        Book a Design
+                    </span>
+
+                    <strong aria-hidden="true">
+                        ↗
+                    </strong>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="collections-hero">
+
+            <div class="collections-hero-background">
+
+                <img
+                    src="../assets/images/hero/hero-main.jpg"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+            </div>
+
+
+            <div
+                class="collections-hero-overlay"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="collections-hero-content">
+
+                <span class="collections-hero-label">
+                    NOJA'S CREATIONS • COLLECTIONS
+                </span>
+
+
+                <h1>
+                    Designed to be
+                    <em>remembered.</em>
+                </h1>
+
+
+                <p class="collections-hero-description">
+                    Explore a carefully curated world of
+                    contemporary fashion, cultural expression
+                    and timeless craftsmanship.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             COLLECTION INDEX
+        ================================================== -->
+
+        <section class="collection-index">
+
+            <div class="section-container">
+
+                <div class="section-label">
+
+                    <span>
+                        01
+                    </span>
+
+                    EXPLORE COLLECTIONS
+
+                </div>
+
+
+                <div class="collection-index-grid">
+
+
+                    <a
+                        href="#signature"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Signature Collection
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#traditional"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Traditional Wear
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#ankara"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Ankara Collection
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#evening"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Evening Wear
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#bridal"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Bridal Collection
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#agbada"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Agbada Collection
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#latest"
+                        class="collection-index-item"
+                    >
+
+                        <span class="collection-index-number">
+                            07
+                        </span>
+
+                        <h3>
+                            Latest Designs
+                        </h3>
+
+                        <span aria-hidden="true">
+                            ↘
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="collections-intro">
+
+            <div class="section-container">
+
+                <div class="collections-intro-grid">
+
+                    <h2>
+                        Every collection
+                        tells a
+                        <em>story.</em>
+                    </h2>
+
+
+                    <div class="collections-intro-text">
+
+                        <p>
+                            At NOJA'S CREATIONS, every piece
+                            is created with intention. From
+                            contemporary silhouettes to
+                            traditional expressions, our
+                            collections celebrate individuality,
+                            culture and personal style.
+                        </p>
+
+
+                        <p>
+                            Discover designs made for moments
+                            that deserve to be remembered.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SIGNATURE COLLECTION
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="signature"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            02 / 07
+                        </span>
+
+                        <p>
+                            THE SIGNATURE COLLECTION
+                        </p>
+
+                        <h2>
+                            Signature
+                            <em>Elegance</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        Refined silhouettes and distinctive
+                        details created for those who appreciate
+                        effortless elegance.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/signature/signature-01.jpeg"
+                                alt="Signature Collection design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Signature
+                                </span>
+
+                                <h3>
+                                    Timeless Expression
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/signature/signature-02.jpeg"
+                                alt="Signature Elegance"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Signature
+                                </span>
+
+                                <h3>
+                                    Signature Elegance
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/signature/signature-03.jpeg"
+                                alt="Signature Collection fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Signature
+                                </span>
+
+                                <h3>
+                                    Modern Classic
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TRADITIONAL COLLECTION
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="traditional"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            03 / 07
+                        </span>
+
+                        <p>
+                            ROOTED IN CULTURE
+                        </p>
+
+                        <h2>
+                            Traditional
+                            <em>Wear</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        Cultural heritage interpreted through
+                        contemporary craftsmanship, detail and
+                        confident silhouettes.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/traditional/traditional-01.jpeg"
+                                alt="Traditional fashion design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Heritage
+                                </span>
+
+                                <h3>
+                                    Heritage Collection
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/traditional/traditional-02.jpeg"
+                                alt="Traditional wear design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Traditional
+                                </span>
+
+                                <h3>
+                                    Cultural Form
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/traditional/traditional-03.jpeg"
+                                alt="Traditional Nigerian fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Heritage
+                                </span>
+
+                                <h3>
+                                    Refined Tradition
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANKARA COLLECTION
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="ankara"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            04 / 07
+                        </span>
+
+                        <p>
+                            COLOUR • PATTERN • CHARACTER
+                        </p>
+
+                        <h2>
+                            Ankara
+                            <em>Collection</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        Vibrant prints and expressive designs
+                        reimagined into contemporary pieces
+                        full of personality.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/ankara/ankara-01.jpeg"
+                                alt="Ankara fashion design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Ankara
+                                </span>
+
+                                <h3>
+                                    Bold Identity
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/ankara/ankara-05.jpeg"
+                                alt="Modern Ankara fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Contemporary
+                                </span>
+
+                                <h3>
+                                    Modern Expression
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/ankara/ankara-03.jpeg"
+                                alt="Ankara collection fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Ankara
+                                </span>
+
+                                <h3>
+                                    Pattern & Form
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EVENING COLLECTION
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="evening"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            05 / 07
+                        </span>
+
+                        <p>
+                            AFTER DARK
+                        </p>
+
+                        <h2>
+                            Evening
+                            <em>Wear</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        Sophisticated designs created for
+                        memorable evenings, celebrations and
+                        moments that demand attention.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/evening/evening-01.jpeg"
+                                alt="Evening wear design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Evening
+                                </span>
+
+                                <h3>
+                                    After Dark
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/evening/evening-02.jpeg"
+                                alt="Elegant evening fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Evening
+                                </span>
+
+                                <h3>
+                                    Quiet Luxury
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/evening/evening-03.jpeg"
+                                alt="Evening collection design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Evening
+                                </span>
+
+                                <h3>
+                                    Midnight Form
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BRIDAL COLLECTION
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="bridal"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            06 / 07
+                        </span>
+
+                        <p>
+                            FOR YOUR SPECIAL MOMENT
+                        </p>
+
+                        <h2>
+                            Bridal
+                            <em>Collection</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        Elegant bridal creations designed to
+                        make one of life's most beautiful moments
+                        truly unforgettable.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/bridal/bridal-01.jpeg"
+                                alt="Bridal fashion design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Bridal
+                                </span>
+
+                                <h3>
+                                    The Bride
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/bridal/bridal-02.jpeg"
+                                alt="Elegant bridal fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Bridal
+                                </span>
+
+                                <h3>
+                                    Grace & Detail
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/bridal/bridal-03.jpeg"
+                                alt="Bridal collection design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Bridal
+                                </span>
+
+                                <h3>
+                                    Forever
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             AGBADA COLLECTION
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="agbada"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            07 / 07
+                        </span>
+
+                        <p>
+                            PRESENCE • CULTURE • STYLE
+                        </p>
+
+                        <h2>
+                            Agbada
+                            <em>Collection</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        Powerful traditional silhouettes with
+                        refined finishing for confident modern
+                        expression.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/agbada/agbada-01.jpeg"
+                                alt="Agbada fashion design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Agbada
+                                </span>
+
+                                <h3>
+                                    Distinguished
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/agbada/agbada-02.jpeg"
+                                alt="Modern Agbada design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Agbada
+                                </span>
+
+                                <h3>
+                                    Modern Heritage
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/agbada/agbada-03.jpeg"
+                                alt="Elegant Agbada collection"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Agbada
+                                </span>
+
+                                <h3>
+                                    Royal Presence
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LATEST DESIGNS
+        ================================================== -->
+
+        <section
+            class="collection-section"
+            id="latest"
+        >
+
+            <div class="section-container">
+
+                <div class="collection-heading">
+
+                    <div class="collection-heading-left">
+
+                        <span class="collection-number">
+                            08
+                        </span>
+
+                        <p>
+                            NEW FROM NOJA'S
+                        </p>
+
+                        <h2>
+                            Latest
+                            <em>Designs</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="collection-description">
+                        The latest expressions from NOJA'S CREATIONS,
+                        bringing fresh ideas and evolving style
+                        into every new piece.
+                    </p>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/latest/latest-01.jpeg"
+                                alt="Latest NOJA'S CREATIONS design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Latest
+                                </span>
+
+                                <h3>
+                                    New Perspective
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/latest/latest-02.jpeg"
+                                alt="Latest fashion design"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Latest
+                                </span>
+
+                                <h3>
+                                    New Season
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="collection-card">
+
+                        <div class="collection-card-image">
+
+                            <img
+                                src="../assets/images/products/latest/latest-03.jpeg"
+                                alt="Latest NOJA'S fashion"
+                                loading="lazy"
+                            >
+
+                            <div class="collection-card-overlay">
+
+                                <span>
+                                    Latest
+                                </span>
+
+                                <h3>
+                                    The New Standard
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURED COLLECTION
+        ================================================== -->
+
+        <section class="featured-collection">
+
+            <div class="section-container">
+
+                <div class="featured-collection-grid">
+
+
+                    <div class="featured-collection-image">
+
+                        <img
+                            src="../assets/images/products/signature/signature-02.jpeg"
+                            alt="NOJA'S CREATIONS Signature Collection"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="featured-collection-content">
+
+                        <span>
+                            FEATURED COLLECTION
+                        </span>
+
+
+                        <h2>
+                            Made with
+                            <em>intention.</em>
+                        </h2>
+
+
+                        <p>
+                            Every NOJA'S CREATIONS piece is
+                            thoughtfully considered — from the
+                            fabric and silhouette to the smallest
+                            finishing detail.
+                        </p>
+
+
+                        <a
+                            href="custom-design.html"
+                            class="primary-button"
+                        >
+
+                            <span>
+                                Create Your Design
+                            </span>
+
+                            <strong aria-hidden="true">
+                                ↗
+                            </strong>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CUSTOM DESIGN CTA
+        ================================================== -->
+
+        <section class="collections-cta">
+
+            <div class="collections-cta-content">
+
+                <span>
+                    YOUR VISION • OUR CRAFT
+                </span>
+
+
+                <h2>
+                    Can't find
+                    exactly what
+                    <em>you imagined?</em>
+                </h2>
+
+
+                <p>
+                    Bring your idea to life with a custom
+                    design created specifically for you.
+                </p>
+
+
+                <a
+                    href="custom-design.html"
+                    class="primary-button"
+                >
+
+                    <span>
+                        Book a Design
+                    </span>
+
+                    <strong aria-hidden="true">
+                        ↗
+                    </strong>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="section-container">
+
+
+            <div class="footer-main">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="../index.html"
+                        aria-label="NOJA'S CREATIONS Home"
+                    >
+
+                        <img
+                            src="../assets/images/logo.jpg"
+                            alt="NOJA'S CREATIONS"
+                            class="footer-logo"
+                        >
+
+                    </a>
+
+
+                    <p>
+                        Fashion crafted with intention.
+                    </p>
+
+                </div>
+
+
+                <!-- FOOTER SOCIALS -->
+
+                <div class="footer-socials">
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        Instagram
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        Facebook
+                    </a>
+
+                    <a
+                        href="https://wa.me/2349150481950"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 NOJA'S CREATIONS
+                </span>
+
+                <span>
+                    Developed by SimmySmart_Tech
+                </span>
+
+                <span>
+                    ALL RIGHTS RESERVED
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/navigation.js"></script>
+
+    <script src="../js/products.js"></script>
+
+    <script src="../js/collections.js"></script>
+
+    <script src="../js/gallery.js"></script>
+
+    <script src="../js/custom-design.js"></script>
+
+    <script src="../js/contact.js"></script>
+
+</body>
+
+</html>

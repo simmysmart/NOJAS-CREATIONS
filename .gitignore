@@ -1,0 +1,41 @@
+# =========================================================
+# NOJA'S CREATIONS
+# Git Ignore
+# =========================================================
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Database backups
+*.sql
+*.sql.zip
+
+# Local uploaded images
+assets/images/products/admin-uploaded/*
+uploads/custom-design/*
+
+# Keep upload folders
+!assets/images/products/admin-uploaded/.gitkeep
+!uploads/custom-design/.gitkeep
+
+# Composer dependencies
+/vendor/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# IDE
+.idea/

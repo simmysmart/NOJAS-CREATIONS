@@ -1,0 +1,2112 @@
+<!-- =========================================================
+     NOJA'S CREATIONS - CUSTOM DESIGN FORM - WORKING VERSION
+     BACKUP: 2026-11-26
+     Location: pages/custom-design.html
+     Saves to table: custom_design_requests2
+     API: server/custom-design/create.php
+     FIXED: Colour + Budget now saving correctly
+     DO NOT DELETE - This version submits successfully
+     ========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- =====================================================
+     BASIC DOCUMENT SETTINGS
+====================================================== -->
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Create a personalised fashion piece with NOJA'S CREATIONS. Share your vision, style preferences and inspiration with us."
+>
+
+<meta
+    name="keywords"
+    content="NOJA'S CREATIONS, custom design, bespoke fashion, custom clothing, Nigerian fashion, fashion designer, bespoke designer"
+>
+
+<meta
+    name="author"
+    content="NOJA'S CREATIONS"
+>
+
+<meta
+    name="theme-color"
+    content="#080808"
+>
+
+<!-- =====================================================
+     PAGE TITLE
+====================================================== -->
+
+<title>Custom Design | NOJA'S CREATIONS</title>
+
+<!-- =====================================================
+     FAVICON
+====================================================== -->
+
+<link
+    rel="icon"
+    type="image/jpeg"
+    href="../assets/images/favicon.jpg"
+>
+
+<!-- =====================================================
+     GOOGLE FONTS
+====================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+    rel="stylesheet"
+>
+
+<!-- =====================================================
+     GLOBAL STYLES
+====================================================== -->
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/components/navbar.css">
+
+<link rel="stylesheet" href="../css/components/buttons.css">
+
+<link rel="stylesheet" href="../css/components/cards.css">
+
+<link rel="stylesheet" href="../css/components/product.css">
+
+<link rel="stylesheet" href="../css/components/forms.css">
+
+<link rel="stylesheet" href="../css/components/gallery.css">
+
+<link rel="stylesheet" href="../css/components/footer.css">
+
+<link rel="stylesheet" href="../css/components/modal.css">
+
+<link rel="stylesheet" href="../css/animations.css">
+
+<link rel="stylesheet" href="../css/responsive.css">
+
+<!-- =====================================================
+     CUSTOM DESIGN PAGE STYLES
+====================================================== -->
+
+<style>
+
+    /* =================================================
+       PAGE
+    ================================================= */
+
+    .custom-design-page {
+        background: #080808;
+        color: #ffffff;
+        overflow-x: hidden;
+    }
+
+    /* =================================================
+       HERO
+    ================================================= */
+
+    .custom-hero {
+        min-height: 76vh;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 150px 6% 90px;
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(8, 8, 8, 0.12),
+                rgba(8, 8, 8, 0.94)
+            ),
+            url("../assets/images/products/ankara/ankara-05.jpeg")
+            center / cover no-repeat;
+    }
+
+    .custom-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8, 8, 8, 0.9),
+                rgba(8, 8, 8, 0.35),
+                rgba(8, 8, 8, 0.12)
+            );
+    }
+
+    .custom-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+    }
+
+    .custom-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+
+        margin-bottom: 28px;
+
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+
+        color: rgba(255, 255, 255, 0.68);
+    }
+
+    .custom-eyebrow::before {
+        content: "";
+
+        width: 42px;
+        height: 1px;
+
+        background: currentColor;
+    }
+
+    .custom-hero h1 {
+        margin: 0;
+
+        max-width: 950px;
+
+        font-family: "Playfair Display", serif;
+        font-size: clamp(52px, 8vw, 110px);
+        font-weight: 400;
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+    }
+
+    .custom-hero h1 em {
+        font-weight: 400;
+    }
+
+    .custom-hero-text {
+        max-width: 600px;
+
+        margin: 32px 0 0;
+
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.9;
+
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* =================================================
+       INTRO SECTION
+    ================================================= */
+
+    .custom-intro {
+        padding: 110px 6%;
+        background: #080808;
+    }
+
+    .custom-container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .custom-intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: end;
+    }
+
+    .custom-label {
+        display: block;
+
+        margin-bottom: 22px;
+
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+
+        color: rgba(255, 255, 255, 0.45);
+    }
+
+    .custom-intro h2 {
+        margin: 0;
+
+        font-family: "Playfair Display", serif;
+        font-size: clamp(40px, 5vw, 68px);
+        font-weight: 400;
+        line-height: 1.05;
+    }
+
+    .custom-intro h2 em {
+        font-weight: 400;
+    }
+
+    .custom-intro-copy {
+        max-width: 570px;
+    }
+
+    .custom-intro-copy p {
+        margin: 0 0 20px;
+
+        font-size: 15px;
+        line-height: 1.9;
+        font-weight: 300;
+
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    /* =================================================
+       PROCESS
+    ================================================= */
+
+    .custom-process {
+        padding: 100px 6%;
+        background: #111111;
+    }
+
+    .process-header {
+        max-width: 720px;
+        margin-bottom: 65px;
+    }
+
+    .process-header h2 {
+        margin: 0;
+
+        font-family: "Playfair Display", serif;
+        font-size: clamp(38px, 5vw, 64px);
+        font-weight: 400;
+        line-height: 1.05;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .process-card {
+        padding: 45px 35px 50px;
+
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .process-card:last-child {
+        border-right: none;
+    }
+
+    .process-number {
+        display: block;
+
+        margin-bottom: 55px;
+
+        font-size: 12px;
+        letter-spacing: 0.12em;
+
+        color: rgba(255, 255, 255, 0.38);
+    }
+
+    .process-card h3 {
+        margin: 0 0 18px;
+
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .process-card p {
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 1.9;
+        font-weight: 300;
+
+        color: rgba(255, 255, 255, 0.57);
+    }
+
+    /* =================================================
+       FORM SECTION
+    ================================================= */
+
+    .custom-form-section {
+        padding: 120px 6%;
+        background: #080808;
+    }
+
+    .custom-form-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .custom-form-header {
+        max-width: 700px;
+        margin-bottom: 60px;
+    }
+
+    .custom-form-header h2 {
+        margin: 0 0 25px;
+
+        font-family: "Playfair Display", serif;
+        font-size: clamp(42px, 5vw, 70px);
+        font-weight: 400;
+        line-height: 1.05;
+    }
+
+    .custom-form-header p {
+        margin: 0;
+
+        font-size: 15px;
+        line-height: 1.9;
+        font-weight: 300;
+
+        color: rgba(255, 255, 255, 0.58);
+    }
+
+    /* =================================================
+       FORM
+    ================================================= */
+
+    .custom-design-form {
+        padding: 55px;
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        background: rgba(255, 255, 255, 0.025);
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 28px;
+    }
+
+    .form-group label {
+        display: block;
+
+        margin-bottom: 10px;
+
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+
+        color: rgba(255, 255, 255, 0.62);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 16px 17px;
+
+        border: 1px solid rgba(255, 255, 255, 0.16);
+
+        outline: none;
+
+        background: #101010;
+        color: #ffffff;
+
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+
+        transition:
+            border-color 0.3s ease,
+            background 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: rgba(255, 255, 255, 0.55);
+        background: #141414;
+    }
+
+    .form-group textarea {
+        min-height: 170px;
+        resize: vertical;
+        line-height: 1.7;
+    }
+
+    .form-group select {
+        cursor: pointer;
+    }
+
+    .form-group select option {
+        background: #101010;
+        color: #ffffff;
+    }
+
+    /* =================================================
+       FILE UPLOAD
+    ================================================= */
+
+    .upload-area {
+        position: relative;
+
+        border: 1px dashed rgba(255, 255, 255, 0.22);
+
+        background: rgba(255, 255, 255, 0.018);
+
+        transition:
+            border-color 0.3s ease,
+            background 0.3s ease;
+    }
+
+    .upload-area:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.035);
+    }
+
+    .upload-area input[type="file"] {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+
+        cursor: pointer;
+    }
+
+    .upload-content {
+        padding: 42px 25px;
+        text-align: center;
+    }
+
+    .upload-icon {
+        display: block;
+
+        margin-bottom: 15px;
+
+        font-size: 28px;
+    }
+
+    .upload-content strong {
+        display: block;
+
+        margin-bottom: 8px;
+
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .upload-content span {
+        display: block;
+
+        font-size: 12px;
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.42);
+    }
+
+    .file-name {
+        margin-top: 14px;
+
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* =================================================
+       IMAGE PREVIEW
+    ================================================= */
+
+    .image-preview {
+        display: none;
+
+        margin-top: 20px;
+    }
+
+    .image-preview img {
+        display: block;
+
+        width: 180px;
+        height: 220px;
+
+        object-fit: cover;
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* =================================================
+       FORM FOOTER
+    ================================================= */
+
+    .form-submit-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        margin-top: 12px;
+        padding-top: 30px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-note {
+        max-width: 500px;
+
+        margin: 0;
+
+        font-size: 12px;
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .custom-submit-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+
+        min-width: 190px;
+
+        padding: 17px 25px;
+
+        border: 1px solid #ffffff;
+
+        background: #ffffff;
+        color: #080808;
+
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+
+        cursor: pointer;
+
+        transition:
+            background 0.3s ease,
+            color 0.3s ease;
+    }
+
+    .custom-submit-button:hover {
+        background: transparent;
+        color: #ffffff;
+    }
+
+    .custom-submit-button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    /* =================================================
+       FORM STATUS
+    ================================================= */
+
+    .form-message {
+        display: none;
+
+        margin-top: 25px;
+        padding: 18px 20px;
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .form-message.success {
+        display: block;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .form-message.error {
+        display: block;
+        color: #ffb4b4;
+    }
+
+    /* =================================================
+       CONTACT ALTERNATIVE
+    ================================================= */
+
+    .custom-contact {
+        padding: 100px 6%;
+        text-align: center;
+
+        background: #111111;
+    }
+
+    .custom-contact-inner {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .custom-contact h2 {
+        margin: 0;
+
+        font-family: "Playfair Display", serif;
+        font-size: clamp(38px, 5vw, 64px);
+        font-weight: 400;
+    }
+
+    .custom-contact p {
+        max-width: 550px;
+
+        margin: 25px auto 35px;
+
+        font-size: 15px;
+        line-height: 1.9;
+        font-weight: 300;
+
+        color: rgba(255, 255, 255, 0.58);
+    }
+
+    .custom-contact-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .custom-contact-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+
+        padding: 14px 20px;
+
+        border: 1px solid rgba(255, 255, 255, 0.22);
+
+        color: #ffffff;
+        text-decoration: none;
+
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        transition:
+            background 0.3s ease,
+            color 0.3s ease;
+    }
+
+    .custom-contact-links a:hover {
+        background: #ffffff;
+        color: #080808;
+    }
+
+    /* =================================================
+       TABLET
+    ================================================= */
+
+    @media (max-width: 900px) {
+
+        .custom-hero {
+            min-height: 70vh;
+            padding: 130px 5% 70px;
+        }
+
+        .custom-intro,
+        .custom-process,
+        .custom-form-section,
+        .custom-contact {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .custom-intro-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .process-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .process-card {
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .process-card:last-child {
+            border-bottom: none;
+        }
+
+        .custom-design-form {
+            padding: 40px;
+        }
+
+    }
+
+    /* =================================================
+       MOBILE
+    ================================================= */
+
+    @media (max-width: 600px) {
+
+        .custom-hero {
+            min-height: 72vh;
+            padding: 120px 6% 60px;
+        }
+
+        .custom-hero h1 {
+            font-size: clamp(45px, 14vw, 68px);
+        }
+
+        .custom-eyebrow {
+            font-size: 9px;
+            letter-spacing: 0.16em;
+        }
+
+        .custom-hero-text {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .custom-intro,
+        .custom-process,
+        .custom-form-section,
+        .custom-contact {
+            padding: 75px 6%;
+        }
+
+        .custom-design-form {
+            padding: 28px 20px;
+        }
+
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .form-submit-area {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .form-note {
+            max-width: none;
+        }
+
+        .custom-submit-button {
+            width: 100%;
+        }
+
+        .image-preview img {
+            width: 150px;
+            height: 190px;
+        }
+
+        .custom-contact-links {
+            flex-direction: column;
+        }
+
+        .custom-contact-links a {
+            justify-content: center;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body class="custom-design-page">
+
+<!-- =====================================================
+     PAGE LOADER
+====================================================== -->
+
+<div
+    class="page-loader"
+    id="pageLoader"
+    aria-hidden="true"
+>
+
+    <div class="loader-logo">
+        NOJA'S
+    </div>
+
+    <div class="loader-line"></div>
+
+</div>
+
+<!-- =====================================================
+     SITE HEADER / NAVIGATION
+====================================================== -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <nav
+        class="navbar"
+        aria-label="Main navigation"
+    >
+
+        <!-- BRAND LOGO -->
+
+        <a
+            href="../index.html"
+            class="brand-logo"
+            aria-label="NOJA'S CREATIONS Home"
+        >
+
+            <img
+                src="../assets/images/logo.jpg"
+                alt="NOJA'S CREATIONS"
+            >
+
+        </a>
+
+        <!-- =================================================
+             DESKTOP NAVIGATION
+        ================================================== -->
+
+        <ul class="nav-menu">
+
+            <!-- HOME -->
+
+            <li class="nav-item">
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+            </li>
+
+            <!-- ABOUT -->
+
+            <li class="nav-item dropdown">
+
+                <a
+                    href="about.html"
+                    class="nav-link"
+                    aria-haspopup="true"
+                >
+
+                    About
+
+                    <span
+                        class="dropdown-icon"
+                        aria-hidden="true"
+                    >
+                        +
+                    </span>
+
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a href="about.html">
+                        Our Story
+                    </a>
+
+                    <a href="about.html#philosophy">
+                        Our Philosophy
+                    </a>
+
+                    <a href="about.html#designer">
+                        The Designer
+                    </a>
+
+                </div>
+
+            </li>
+
+            <!-- COLLECTIONS -->
+
+            <li class="nav-item mega-dropdown">
+
+                <a
+                    href="collections.html"
+                    class="nav-link"
+                    aria-haspopup="true"
+                >
+
+                    Collections
+
+                    <span
+                        class="dropdown-icon"
+                        aria-hidden="true"
+                    >
+                        +
+                    </span>
+
+                </a>
+
+                <div class="mega-menu">
+
+                    <div class="mega-menu-intro">
+
+                        <span class="menu-label">
+                            EXPLORE
+                        </span>
+
+                        <h3>
+                            Our <em>Collections</em>
+                        </h3>
+
+                        <p>
+                            Discover carefully crafted designs
+                            created to express confidence,
+                            elegance and individuality.
+                        </p>
+
+                        <a
+                            href="collections.html"
+                            class="menu-view-all"
+                        >
+
+                            View All Collections
+
+                            <span aria-hidden="true">
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                    <div class="mega-menu-links">
+
+                        <a href="collections.html#signature">
+                            <span>01</span>
+                            Signature Collection
+                        </a>
+
+                        <a href="collections.html#traditional">
+                            <span>02</span>
+                            Traditional Wear
+                        </a>
+
+                        <a href="collections.html#ankara">
+                            <span>03</span>
+                            Ankara Collection
+                        </a>
+
+                        <a href="collections.html#evening">
+                            <span>04</span>
+                            Evening Wear
+                        </a>
+
+                        <a href="collections.html#bridal">
+                            <span>05</span>
+                            Bridal Collection
+                        </a>
+
+                        <a href="collections.html#agbada">
+                            <span>06</span>
+                            Agbada Collection
+                        </a>
+
+                        <a href="collections.html#latest">
+                            <span>07</span>
+                            Latest Designs
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <!-- CUSTOM DESIGN -->
+
+            <li class="nav-item">
+
+                <a
+                    href="custom-design.html"
+                    class="nav-link active"
+                >
+                    Custom Design
+                </a>
+
+            </li>
+
+            <!-- GALLERY -->
+
+            <li class="nav-item">
+
+                <a
+                    href="gallery.html"
+                    class="nav-link"
+                >
+                    Gallery
+                </a>
+
+            </li>
+
+            <!-- CONTACT -->
+
+            <li class="nav-item dropdown">
+
+                <a
+                    href="contact.html"
+                    class="nav-link"
+                    aria-haspopup="true"
+                >
+
+                    Contact
+
+                    <span
+                        class="dropdown-icon"
+                        aria-hidden="true"
+                    >
+                        +
+                    </span>
+
+                </a>
+
+                <div class="dropdown-menu">
+
+                    <a
+                        href="https://wa.me/2349150481950"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+
+                    <a href="mailto:nojascreations@gmail.com">
+                        Email Us
+                    </a>
+
+                    <a href="tel:+2349150481950">
+                        Call Us
+                    </a>
+
+                    <a href="contact.html">
+                        Send Enquiry
+                    </a>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+        <!-- =================================================
+             DESKTOP CTA
+        ================================================== -->
+
+        <a
+            href="custom-design.html"
+            class="nav-cta"
+        >
+
+            <span>
+                Book a Design
+            </span>
+
+            <strong aria-hidden="true">
+                ↗
+            </strong>
+
+        </a>
+
+        <!-- =================================================
+             MOBILE MENU BUTTON
+        ================================================== -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+    <!-- =====================================================
+         MOBILE NAVIGATION
+    ====================================================== -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-hidden="true"
+    >
+
+        <div class="mobile-menu-inner">
+
+            <!-- HOME -->
+
+            <a
+                href="../index.html"
+                class="mobile-link"
+            >
+                Home
+            </a>
+
+            <!-- ABOUT -->
+
+            <button
+                class="mobile-dropdown-toggle"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <span>
+                    About
+                </span>
+
+                <strong aria-hidden="true">
+                    +
+                </strong>
+
+            </button>
+
+            <div class="mobile-dropdown-content">
+
+                <a href="about.html">
+                    Our Story
+                </a>
+
+                <a href="about.html#philosophy">
+                    Our Philosophy
+                </a>
+
+                <a href="about.html#designer">
+                    The Designer
+                </a>
+
+            </div>
+
+            <!-- COLLECTIONS -->
+
+            <button
+                class="mobile-dropdown-toggle"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <span>
+                    Collections
+                </span>
+
+                <strong aria-hidden="true">
+                    +
+                </strong>
+
+            </button>
+
+            <div class="mobile-dropdown-content">
+
+                <a href="collections.html#signature">
+                    Signature Collection
+                </a>
+
+                <a href="collections.html#traditional">
+                    Traditional Wear
+                </a>
+
+                <a href="collections.html#ankara">
+                    Ankara Collection
+                </a>
+
+                <a href="collections.html#evening">
+                    Evening Wear
+                </a>
+
+                <a href="collections.html#bridal">
+                    Bridal Collection
+                </a>
+
+                <a href="collections.html#agbada">
+                    Agbada Collection
+                </a>
+
+                <a href="collections.html#latest">
+                    Latest Designs
+                </a>
+
+            </div>
+
+            <!-- CUSTOM DESIGN -->
+
+            <a
+                href="custom-design.html"
+                class="mobile-link"
+            >
+                Custom Design
+            </a>
+
+            <!-- GALLERY -->
+
+            <a
+                href="gallery.html"
+                class="mobile-link"
+            >
+                Gallery
+            </a>
+
+            <!-- CONTACT -->
+
+            <button
+                class="mobile-dropdown-toggle"
+                type="button"
+                aria-expanded="false"
+            >
+
+                <span>
+                    Contact
+                </span>
+
+                <strong aria-hidden="true">
+                    +
+                </strong>
+
+            </button>
+
+            <div class="mobile-dropdown-content">
+
+                <a
+                    href="https://wa.me/2349150481950"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+
+                <a href="mailto:nojascreations@gmail.com">
+                    Email Us
+                </a>
+
+                <a href="tel:+2349150481950">
+                    Call Us
+                </a>
+
+                <a href="contact.html">
+                    Send Enquiry
+                </a>
+
+            </div>
+
+            <!-- MOBILE BOOK BUTTON -->
+
+            <a
+                href="custom-design.html"
+                class="mobile-book-button"
+            >
+
+                <span>
+                    Book a Design
+                </span>
+
+                <strong aria-hidden="true">
+                    ↗
+                </strong>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main>
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="custom-hero">
+
+        <div class="custom-hero-content">
+
+            <span class="custom-eyebrow">
+                NOJA'S CREATIONS • BESPOKE
+            </span>
+
+            <h1>
+                Your vision.<br>
+                Your <em>design.</em>
+            </h1>
+
+            <p class="custom-hero-text">
+                Bring your idea to life with a personalised
+                NOJA'S CREATIONS piece designed around your
+                style, personality and occasion.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =================================================
+         INTRODUCTION
+    ================================================== -->
+
+    <section class="custom-intro">
+
+        <div class="custom-container">
+
+            <div class="custom-intro-grid">
+
+                <!-- TITLE -->
+
+                <div>
+
+                    <span class="custom-label">
+                        01 • THE EXPERIENCE
+                    </span>
+
+                    <h2>
+                        Made for you.<br>
+                        Made with <em>intention.</em>
+                    </h2>
+
+                </div>
+
+                <!-- COPY -->
+
+                <div class="custom-intro-copy">
+
+                    <p>
+                        A custom design begins with an idea.
+                        It could be a particular silhouette,
+                        a fabric you love, a special occasion,
+                        a cultural influence or simply a look
+                        you have imagined.
+                    </p>
+
+                    <p>
+                        Tell us what you have in mind and give
+                        us the details that matter to you.
+                        We will use your direction as the
+                        foundation for creating something unique.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =================================================
+         PROCESS
+    ================================================== -->
+
+    <section class="custom-process">
+
+        <div class="custom-container">
+
+            <!-- PROCESS HEADER -->
+
+            <div class="process-header">
+
+                <span class="custom-label">
+                    02 • HOW IT WORKS
+                </span>
+
+                <h2>
+                    From idea to<br>
+                    finished <em>piece.</em>
+                </h2>
+
+            </div>
+
+            <!-- PROCESS GRID -->
+
+            <div class="process-grid">
+
+                <!-- STEP 01 -->
+
+                <article class="process-card">
+
+                    <span class="process-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Share Your Vision
+                    </h3>
+
+                    <p>
+                        Tell us about the design you have in mind.
+                        Describe the style, occasion, colour,
+                        fabric, fit or any other details that
+                        are important to you.
+                    </p>
+
+                </article>
+
+                <!-- STEP 02 -->
+
+                <article class="process-card">
+
+                    <span class="process-number">
+                        02
+                    </span>
+
+                    <h3>
+                        We Refine It
+                    </h3>
+
+                    <p>
+                        Your ideas become the foundation for a
+                        considered design direction that balances
+                        your preferences with our creative approach.
+                    </p>
+
+                </article>
+
+                <!-- STEP 03 -->
+
+                <article class="process-card">
+
+                    <span class="process-number">
+                        03
+                    </span>
+
+                    <h3>
+                        We Create
+                    </h3>
+
+                    <p>
+                        Once the details are agreed, the design
+                        moves from concept to creation with
+                        attention given to every important detail.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =================================================
+         CUSTOM DESIGN REQUEST FORM
+    ================================================== -->
+
+    <section class="custom-form-section">
+
+        <div class="custom-form-wrapper">
+
+            <!-- FORM HEADER -->
+
+            <div class="custom-form-header">
+
+                <span class="custom-label">
+                    03 • START YOUR REQUEST
+                </span>
+
+                <h2>
+                    Tell us what<br>
+                    you're <em>imagining.</em>
+                </h2>
+
+                <p>
+                    Complete the form below with as much detail
+                    as possible. You can also upload an inspiration
+                    image to help communicate your vision.
+                </p>
+
+            </div>
+
+            <!-- =================================================
+                 FORM
+            ================================================== -->
+
+            <form
+                class="custom-design-form"
+                id="customDesignForm"
+                enctype="multipart/form-data"
+            >
+
+                <!-- =================================================
+                     PERSONAL DETAILS
+                ================================================== -->
+
+                <div class="form-row">
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- =================================================
+                     PHONE + CATEGORY
+                ================================================== -->
+
+                <div class="form-row">
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone / WhatsApp *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Design Category *
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select a category
+                            </option>
+
+                            <option value="Signature">
+                                Signature
+                            </option>
+
+                            <option value="Traditional">
+                                Traditional Wear
+                            </option>
+
+                            <option value="Ankara">
+                                Ankara
+                            </option>
+
+                            <option value="Evening">
+                                Evening Wear
+                            </option>
+
+                            <option value="Bridal">
+                                Bridal
+                            </option>
+
+                            <option value="Agbada">
+                                Agbada
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- =================================================
+                     OCCASION + COLOUR
+                ================================================== -->
+
+                <div class="form-row">
+
+                    <!-- OCCASION -->
+
+                    <div class="form-group">
+
+                        <label for="occasion">
+                            Occasion
+                        </label>
+
+                        <input
+                            type="text"
+                            id="occasion"
+                            name="occasion"
+                            placeholder="e.g. Wedding, birthday, event, photoshoot..."
+                        >
+
+                    </div>
+
+                    <!-- COLOUR - NEW: Now saves to database -->
+
+                    <div class="form-group">
+
+                        <label for="colour">
+                            Preferred Colour
+                        </label>
+
+                        <input
+                            type="text"
+                            id="colour"
+                            name="colour"
+                            placeholder="e.g. Royal Blue, Gold, White, Black..."
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- =================================================
+                     DESIGN DESCRIPTION
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Describe Your Design *
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="Tell us about the design you have in mind. Include colours, fabric preferences, style, fit, details and anything else that matters to you."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- =================================================
+                     BUDGET + PREFERRED DATE
+                ================================================== -->
+
+                <div class="form-row">
+
+                    <!-- BUDGET - Now saves correctly -->
+
+                    <div class="form-group">
+
+                        <label for="budget">
+                            Estimated Budget *
+                        </label>
+
+                        <select
+                            id="budget"
+                            name="budget"
+                            required
+                        >
+
+                            <option value="">
+                                Select budget range
+                            </option>
+
+                            <option value="Under ₦100,000">
+                                Under ₦100,000
+                            </option>
+
+                            <option value="₦100,000 - ₦200,000">
+                                ₦100,000 - ₦200,000
+                            </option>
+
+                            <option value="₦200,000 - ₦350,000">
+                                ₦200,000 - ₦350,000
+                            </option>
+
+                            <option value="₦350,000 - ₦500,000">
+                                ₦350,000 - ₦500,000
+                            </option>
+
+                            <option value="₦500,000+">
+                                ₦500,000+
+                            </option>
+
+                            <option value="Not Sure">
+                                Not Sure Yet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- PREFERRED DATE -->
+
+                    <div class="form-group">
+
+                        <label for="preferred_date">
+                            Preferred Completion Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="preferred_date"
+                            name="preferred_date"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- =================================================
+                     INSPIRATION IMAGE
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label for="design_image">
+                        Inspiration Image
+                    </label>
+
+                    <div class="upload-area">
+
+                        <input
+                            type="file"
+                            id="design_image"
+                            name="design_image"
+                            accept="image/jpeg,image/png,image/webp"
+                        >
+
+                        <div class="upload-content">
+
+                            <span
+                                class="upload-icon"
+                                aria-hidden="true"
+                            >
+                                ↑
+                            </span>
+
+                            <strong>
+                                Upload an inspiration image
+                            </strong>
+
+                            <span>
+                                JPG, PNG or WEBP • Maximum 5MB
+                            </span>
+
+                            <div
+                                class="file-name"
+                                id="fileName"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- IMAGE PREVIEW -->
+
+                    <div
+                        class="image-preview"
+                        id="imagePreview"
+                    >
+
+                        <img
+                            id="previewImage"
+                            src=""
+                            alt="Design inspiration preview"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- =================================================
+                     SUBMISSION AREA
+                ================================================== -->
+
+                <div class="form-submit-area">
+
+                    <p class="form-note">
+                        By submitting this request, you are giving
+                        NOJA'S CREATIONS the information needed to
+                        review and respond to your design enquiry.
+                    </p>
+
+                    <button type="button" class="custom-submit-button" id="customSubmitButton">
+
+                        <span>
+                            Submit Request
+                        </span>
+
+                        <strong aria-hidden="true">
+                            ↗
+                        </strong>
+
+                    </button>
+
+                </div>
+
+                <!-- =================================================
+                     FORM MESSAGE
+                ================================================== -->
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- =================================================
+         ALTERNATIVE CONTACT
+    ================================================== -->
+
+    <section class="custom-contact">
+
+        <div class="custom-contact-inner">
+
+            <span class="custom-label">
+                PREFER A DIRECT CONVERSATION?
+            </span>
+
+            <h2>
+                Let's talk about<br>
+                your <em>idea.</em>
+            </h2>
+
+            <p>
+                You can also contact NOJA'S CREATIONS directly
+                if you would prefer to discuss your design
+                before submitting a request.
+            </p>
+
+            <div class="custom-contact-links">
+
+                <a
+                    href="https://wa.me/2349150481950"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+                <a href="mailto:nojascreations@gmail.com">
+                    Email Us
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+                <a href="tel:+2349150481950">
+                    Call Us
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- =====================================================
+     SITE FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="section-container">
+
+        <div class="footer-main">
+
+            <!-- FOOTER BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="../index.html"
+                    aria-label="NOJA'S CREATIONS Home"
+                >
+
+                    <img
+                        src="../assets/images/logo.jpg"
+                        alt="NOJA'S CREATIONS"
+                        class="footer-logo"
+                    >
+
+                </a>
+
+                <p>
+                    Fashion crafted with intention.
+                </p>
+
+            </div>
+
+            <!-- FOOTER SOCIALS -->
+
+            <div class="footer-socials">
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                >
+                    Facebook
+                </a>
+
+                <a
+                    href="https://wa.me/2349150481950"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 NOJA'S CREATIONS
+            </span>
+
+            <span>
+                Developed by SimmySmart_Tech
+            </span>
+
+            <span>
+                ALL RIGHTS RESERVED
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="../js/main.js"></script>
+
+<script src="../js/navigation.js"></script>
+
+<script src="../js/products.js"></script>
+
+<script src="../js/collections.js"></script>
+
+<script src="../js/gallery.js"></script>
+
+<script src="../js/contact.js"></script>
+
+<script>
+// NOJA'S - Custom Design - Button Click Version (no submit block)
+// FIXED: Colour + Budget now sent correctly
+document.getElementById('customSubmitButton').addEventListener('click', async function(e) {
+  e.preventDefault();
+  var msgBox = document.getElementById('formMessage');
+  var btn = document.getElementById('customSubmitButton');
+  if (msgBox) { msgBox.style.display = 'block'; msgBox.className = 'form-message success'; msgBox.textContent = 'Submitting... please wait'; }
+  if (btn) btn.disabled = true;
+
+  var fd = new FormData();
+  var category = document.getElementById('category').value || 'Custom';
+  fd.append('product', category + ' Custom Design');
+  fd.append('name', document.getElementById('name').value);
+  fd.append('email', document.getElementById('email').value);
+  fd.append('phone', document.getElementById('phone').value);
+  fd.append('category', category);
+  fd.append('budget', document.getElementById('budget').value);
+  fd.append('description', document.getElementById('description').value);
+  fd.append('colour', document.getElementById('colour').value);
+  fd.append('occasion', document.getElementById('occasion').value);
+  fd.append('preferred_date', document.getElementById('preferred_date').value);
+  var file = document.getElementById('design_image').files[0];
+  if (file) fd.append('design_image', file);
+
+  try {
+    var res = await fetch('../server/custom-design/create.php', { method: 'POST', body: fd });
+    var text = await res.text();
+    console.log('API response:', text);
+    var data = {};
+    try { data = JSON.parse(text); } catch(err) {}
+    if (data.success) {
+      if (msgBox) msgBox.textContent = 'Your custom design request has been submitted successfully!';
+      document.getElementById('customDesignForm').reset();
+    } else {
+      if (msgBox) { msgBox.className = 'form-message error'; msgBox.textContent = data.message || 'Unable to save. Check XAMPP / create.php'; }
+    }
+  } catch(err) {
+    if (msgBox) { msgBox.className = 'form-message error'; msgBox.textContent = 'Network error: ' + err.message; }
+  }
+  if (btn) btn.disabled = false;
+});
+</script>
+</body>
+
+</html>

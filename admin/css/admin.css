@@ -1,0 +1,1782 @@
+
+/* =========================================================
+   NOJA'S CREATIONS
+   ADMINISTRATION
+   MAIN ADMIN STYLES
+========================================================= */
+
+
+/* =========================================================
+   1. ADMIN VARIABLES
+========================================================= */
+
+:root {
+
+    --admin-bg: #f7f5f1;
+    --admin-surface: #ffffff;
+    --admin-surface-soft: #fbfaf8;
+
+    --admin-text: #171717;
+    --admin-text-soft: #6e6a64;
+    --admin-text-muted: #99938b;
+
+    --admin-border: #e7e2db;
+    --admin-border-dark: #d7d0c7;
+
+    --admin-accent: #171717;
+    --admin-accent-soft: #efebe5;
+
+    --admin-danger: #9d3d3d;
+
+    --admin-radius: 2px;
+
+    --admin-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.04);
+
+    --admin-shadow-hover:
+        0 18px 45px rgba(0, 0, 0, 0.08);
+
+    --admin-sidebar-width: 270px;
+    --admin-header-height: 82px;
+
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+.admin-page *,
+.admin-page *::before,
+.admin-page *::after {
+    box-sizing: border-box;
+}
+
+
+.admin-page {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    background: var(--admin-bg);
+
+    color: var(--admin-text);
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+}
+
+
+.admin-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.admin-page button,
+.admin-page input,
+.admin-page textarea,
+.admin-page select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   3. ADMIN HEADER
+========================================================= */
+
+.admin-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: var(--admin-header-height);
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border-bottom:
+        1px solid var(--admin-border);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.admin-header-container {
+
+    width: min(100%, 1800px);
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding:
+        0 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   4. ADMIN LOGO
+========================================================= */
+
+.admin-logo {
+
+    display: inline-flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 150px;
+
+    line-height: 1;
+
+}
+
+
+.admin-logo-main {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.admin-logo-sub {
+
+    margin-top: 5px;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.42em;
+
+    color: var(--admin-text-soft);
+
+}
+
+
+.admin-heading {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.admin-heading span {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.28em;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+/* =========================================================
+   5. HEADER ACTIONS
+========================================================= */
+
+.admin-header-actions {
+
+    min-width: 150px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.view-site {
+
+    position: relative;
+
+    padding: 10px 0;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+}
+
+
+.view-site::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 5px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--admin-text);
+
+    transition:
+        width 0.3s ease;
+
+}
+
+
+.view-site:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   6. MENU TOGGLE
+========================================================= */
+
+.admin-menu-toggle {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    border: 1px solid var(--admin-border);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.admin-menu-toggle span {
+
+    width: 18px;
+
+    height: 1px;
+
+    background: var(--admin-text);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+
+/* =========================================================
+   7. ADMIN LAYOUT
+========================================================= */
+
+.admin-layout {
+
+    display: flex;
+
+    min-height:
+        calc(100vh - var(--admin-header-height));
+
+}
+
+
+/* =========================================================
+   8. SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+
+    position: sticky;
+
+    top: var(--admin-header-height);
+
+    width: var(--admin-sidebar-width);
+
+    height:
+        calc(100vh - var(--admin-header-height));
+
+    flex-shrink: 0;
+
+    background: var(--admin-surface);
+
+    border-right:
+        1px solid var(--admin-border);
+
+    overflow-y: auto;
+
+}
+
+
+.admin-sidebar-inner {
+
+    min-height: 100%;
+
+    padding: 34px 24px 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   9. ADMIN USER
+========================================================= */
+
+.admin-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        0 4px 30px;
+
+    border-bottom:
+        1px solid var(--admin-border);
+
+}
+
+
+.admin-avatar {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--admin-border-dark);
+
+    background: var(--admin-bg);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+}
+
+
+.admin-user-info {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.admin-user-info strong {
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.admin-user-info span {
+
+    font-size: 8px;
+
+    color: var(--admin-text-muted);
+
+    letter-spacing: 0.08em;
+
+}
+
+
+/* =========================================================
+   10. NAVIGATION
+========================================================= */
+
+.admin-navigation {
+
+    padding-top: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.admin-nav-title {
+
+    margin:
+        0 8px 10px;
+
+    padding-top: 8px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+.admin-nav-title:not(:first-child) {
+
+    margin-top: 25px;
+
+}
+
+
+.admin-nav-link {
+
+    position: relative;
+
+    min-height: 46px;
+
+    padding:
+        0 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: var(--admin-text-soft);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.admin-nav-link::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 9px;
+
+    bottom: 9px;
+
+    width: 2px;
+
+    background: var(--admin-text);
+
+    transform:
+        scaleY(0);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.admin-nav-link:hover {
+
+    color: var(--admin-text);
+
+    background:
+        var(--admin-bg);
+
+}
+
+
+.admin-nav-link.active {
+
+    color: var(--admin-text);
+
+    background:
+        var(--admin-bg);
+
+}
+
+
+.admin-nav-link.active::before {
+
+    transform:
+        scaleY(1);
+
+}
+
+
+.nav-icon {
+
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+}
+
+
+.notification-count {
+
+    min-width: 19px;
+
+    height: 19px;
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--admin-border);
+
+    font-size: 8px;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+/* =========================================================
+   11. SIDEBAR BOTTOM
+========================================================= */
+
+.admin-sidebar-bottom {
+
+    margin-top: auto;
+
+    padding-top: 30px;
+
+}
+
+
+.logout-button {
+
+    width: 100%;
+
+    padding: 14px 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: 1px solid var(--admin-border);
+
+    background: transparent;
+
+    color: var(--admin-text-soft);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.logout-button:hover {
+
+    border-color: var(--admin-danger);
+
+    color: var(--admin-danger);
+
+    background:
+        rgba(157, 61, 61, 0.03);
+
+}
+
+
+/* =========================================================
+   12. MAIN CONTENT
+========================================================= */
+
+.admin-main {
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding:
+        58px 55px 35px;
+
+}
+
+
+.admin-main > * {
+
+    width: min(100%, 1500px);
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+/* =========================================================
+   13. PAGE INTRO
+========================================================= */
+
+.admin-page-intro {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.admin-eyebrow {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.28em;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+.admin-page-intro h1 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.02em;
+
+}
+
+
+.admin-page-intro p {
+
+    max-width: 550px;
+
+    margin:
+        17px 0 0;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: var(--admin-text-soft);
+
+}
+
+
+.admin-date {
+
+    padding-bottom: 5px;
+
+    white-space: nowrap;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+/* =========================================================
+   14. STATISTICS
+========================================================= */
+
+.admin-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid var(--admin-border);
+
+    border-bottom:
+        1px solid var(--admin-border);
+
+    margin-bottom: 45px;
+
+}
+
+
+.admin-stat-card {
+
+    min-height: 155px;
+
+    padding:
+        27px 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    border-right:
+        1px solid var(--admin-border);
+
+    background:
+        rgba(255, 255, 255, 0.35);
+
+    transition:
+        background 0.3s ease;
+
+}
+
+
+.admin-stat-card:last-child {
+
+    border-right: 0;
+
+}
+
+
+.admin-stat-card:hover {
+
+    background:
+        var(--admin-surface);
+
+}
+
+
+.stat-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--admin-border);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+}
+
+
+.stat-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.stat-content span {
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+.stat-content strong {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   15. DASHBOARD GRID
+========================================================= */
+
+.admin-dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+}
+
+
+.admin-panel {
+
+    min-width: 0;
+
+    padding: 30px;
+
+    background:
+        var(--admin-surface);
+
+    border:
+        1px solid var(--admin-border);
+
+    box-shadow:
+        var(--admin-shadow);
+
+}
+
+
+.quick-actions-panel {
+
+    grid-column:
+        span 1;
+
+}
+
+
+.recent-products-panel {
+
+    grid-column:
+        span 1;
+
+}
+
+
+.messages-panel {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* =========================================================
+   16. PANEL HEADING
+========================================================= */
+
+.panel-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 24px;
+
+    border-bottom:
+        1px solid var(--admin-border);
+
+}
+
+
+.panel-heading span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.22em;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+.panel-heading h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+}
+
+
+.panel-heading > a {
+
+    padding-top: 8px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    text-decoration: underline;
+
+    text-underline-offset: 5px;
+
+}
+
+
+/* =========================================================
+   17. QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    padding-top: 24px;
+
+}
+
+
+.quick-action {
+
+    min-height: 100px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    border:
+        1px solid var(--admin-border);
+
+    background:
+        var(--admin-surface-soft);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.quick-action > span {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--admin-border);
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+
+}
+
+
+.quick-action div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.quick-action strong {
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+
+}
+
+
+.quick-action small {
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+.quick-action:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        var(--admin-border-dark);
+
+    box-shadow:
+        var(--admin-shadow-hover);
+
+}
+
+
+/* =========================================================
+   18. EMPTY DASHBOARD
+========================================================= */
+
+.empty-dashboard {
+
+    min-height: 230px;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+}
+
+
+.empty-dashboard > span {
+
+    width: 48px;
+
+    height: 48px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--admin-border);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+}
+
+
+.empty-dashboard h3 {
+
+    margin: 0 0 7px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    font-weight: 500;
+
+}
+
+
+.empty-dashboard p {
+
+    max-width: 280px;
+
+    margin: 0;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+/* =========================================================
+   19. ADMIN BUTTON
+========================================================= */
+
+.admin-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    margin-top: 18px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid var(--admin-text);
+
+    background:
+        var(--admin-text);
+
+    color:
+        #ffffff !important;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.admin-button:hover {
+
+    background:
+        transparent;
+
+    color:
+        var(--admin-text) !important;
+
+}
+
+
+/* =========================================================
+   20. ADMIN FOOTER
+========================================================= */
+
+.admin-footer {
+
+    margin-top: 55px;
+
+    padding-top: 22px;
+
+    border-top:
+        1px solid var(--admin-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 7px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    color: var(--admin-text-muted);
+
+}
+
+
+/* =========================================================
+   21. SCROLLBAR
+========================================================= */
+
+.admin-sidebar::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+
+.admin-sidebar::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+
+}
+
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+
+    background:
+        var(--admin-border-dark);
+
+}
+
+
+/* =========================================================
+   22. SELECTION
+========================================================= */
+
+.admin-page ::selection {
+
+    background:
+        var(--admin-text);
+
+    color:
+        #ffffff;
+
+}
+/* =========================================================
+   NOJA'S CREATIONS
+   ADMIN BASE
+========================================================= */
+
+:root {
+
+    --admin-bg: #f5f3ef;
+    --admin-surface: #ffffff;
+    --admin-dark: #111111;
+    --admin-muted: #777777;
+    --admin-border: #e7e3dc;
+    --admin-accent: #1d1d1d;
+
+    --sidebar-width: 250px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--admin-bg);
+
+    color: var(--admin-dark);
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: var(--sidebar-width);
+
+    background: #111111;
+
+    color: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    z-index: 1000;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.admin-brand {
+
+    padding: 34px 28px;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+
+}
+
+
+.admin-brand-mark {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.admin-brand-text {
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    margin-top: 5px;
+
+    opacity: .6;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.admin-navigation {
+
+    padding: 25px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.admin-nav-link {
+
+    text-decoration: none;
+
+    color: rgba(255,255,255,.62);
+
+    padding: 15px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 13px;
+
+    transition: .25s ease;
+
+}
+
+
+.admin-nav-link span {
+
+    font-size: 9px;
+
+    opacity: .45;
+
+}
+
+
+.admin-nav-link:hover {
+
+    color: #ffffff;
+
+    background: rgba(255,255,255,.06);
+
+}
+
+
+.admin-nav-link.active {
+
+    color: #ffffff;
+
+    background: rgba(255,255,255,.10);
+
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+========================================================= */
+
+.admin-sidebar-footer {
+
+    margin-top: auto;
+
+    padding: 22px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+}
+
+
+.back-to-site {
+
+    color: rgba(255,255,255,.65);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+}
+
+
+.back-to-site:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.admin-main {
+
+    margin-left: var(--sidebar-width);
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.admin-topbar {
+
+    min-height: 100px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--admin-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 40px;
+
+}
+
+
+.admin-page-title span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #999999;
+
+    margin-bottom: 7px;
+
+}
+
+
+.admin-page-title h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+}
+
+
+.admin-refresh-button {
+
+    border: 1px solid var(--admin-border);
+
+    background: #ffffff;
+
+    padding: 11px 17px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: .25s ease;
+
+}
+
+
+.admin-refresh-button:hover {
+
+    background: #111111;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.admin-menu-toggle {
+
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.admin-content {
+
+    padding: 40px;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+
+        transform: translateX(-100%);
+
+        transition: transform .3s ease;
+
+    }
+
+
+    .admin-sidebar.open {
+
+        transform: translateX(0);
+
+    }
+
+
+    .admin-main {
+
+        margin-left: 0;
+
+    }
+
+
+    .admin-menu-toggle {
+
+        display: block;
+
+    }
+
+
+    .admin-topbar {
+
+        gap: 20px;
+
+    }
+
+
+    .admin-content {
+
+        padding: 25px 18px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-topbar {
+
+        padding: 18px;
+
+    }
+
+
+    .admin-page-title h1 {
+
+        font-size: 21px;
+
+    }
+
+
+    .admin-refresh-button {
+
+        font-size: 11px;
+
+        padding: 9px 12px;
+
+    }
+
+}

@@ -1,0 +1,1129 @@
+/* =========================================================
+   NOJA'S CREATIONS
+   NAVBAR
+   DESKTOP + TABLET + MOBILE
+   DROPDOWN + MEGA MENU
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: min(calc(100% - 80px), 1380px);
+    min-height: 92px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.brand-logo {
+    display: block;
+
+    width: 125px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+.brand-logo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    margin-left: auto;
+    margin-right: 35px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 34px 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   NAV UNDERLINE
+========================================================= */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 25px;
+
+    width: 0;
+    height: 1px;
+
+    background: #c9a86a;
+
+    transition:
+        width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DROPDOWN ICON
+========================================================= */
+
+.dropdown-icon {
+    display: inline-block;
+
+    color: #c9a86a;
+
+    font-size: 14px;
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* Rotate when dropdown is hovered */
+
+.dropdown:hover > .nav-link .dropdown-icon,
+.mega-dropdown:hover > .nav-link .dropdown-icon {
+
+    transform: rotate(45deg);
+
+}
+
+
+/* =========================================================
+   STANDARD DROPDOWN
+========================================================= */
+
+.dropdown-menu {
+
+    position: absolute;
+
+    top: calc(100% - 10px);
+    left: 50%;
+
+    width: 230px;
+
+    margin: 0;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        rgba(17, 17, 17, 0.98);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5);
+
+    transform:
+        translate(-50%, 15px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 10001;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* =========================================================
+   STANDARD DROPDOWN OPEN
+========================================================= */
+
+.dropdown:hover > .dropdown-menu,
+.dropdown.open > .dropdown-menu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* =========================================================
+   STANDARD DROPDOWN LINKS
+========================================================= */
+
+.dropdown-menu a {
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 45px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    color: #b5b5b5;
+
+    background: transparent;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    padding-left: 20px;
+
+}
+
+
+/* =========================================================
+   COLLECTIONS MEGA MENU
+========================================================= */
+
+.mega-menu {
+
+    position: absolute;
+
+    top: calc(100% - 10px);
+    left: 50%;
+
+    width: min(780px, 90vw);
+
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    background:
+        rgba(17, 17, 17, 0.98);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55);
+
+    transform:
+        translate(-50%, 15px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 10001;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* =========================================================
+   MEGA MENU OPEN
+========================================================= */
+
+.mega-dropdown:hover > .mega-menu,
+.mega-dropdown.open > .mega-menu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* =========================================================
+   MEGA MENU INTRO
+========================================================= */
+
+.mega-menu-intro {
+
+    padding: 40px;
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(201, 168, 106, 0.12),
+            transparent 65%
+        );
+}
+
+
+/* =========================================================
+   MENU LABEL
+========================================================= */
+
+.menu-label {
+
+    display: block;
+
+    color: #c9a86a;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   MEGA MENU TITLE
+========================================================= */
+
+.mega-menu-intro h3 {
+
+    margin: 15px 0;
+
+    color: #ffffff;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+.mega-menu-intro h3 em {
+
+    color: #c9a86a;
+
+}
+
+
+/* =========================================================
+   MEGA MENU DESCRIPTION
+========================================================= */
+
+.mega-menu-intro p {
+
+    max-width: 280px;
+
+    margin-bottom: 25px;
+
+    color: #b5b5b5;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   VIEW ALL
+========================================================= */
+
+.menu-view-all {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+}
+
+.menu-view-all span {
+
+    color: #c9a86a;
+
+}
+
+
+/* =========================================================
+   MEGA LINKS
+========================================================= */
+
+.mega-menu-links {
+
+    padding: 25px;
+
+}
+
+.mega-menu-links a {
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 16px 12px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    color: #b5b5b5;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.mega-menu-links a:last-child {
+
+    border-bottom: none;
+
+}
+
+.mega-menu-links a span {
+
+    color: #c9a86a;
+
+    font-size: 9px;
+
+}
+
+.mega-menu-links a:hover {
+
+    color: #ffffff;
+
+    padding-left: 20px;
+
+}
+
+
+/* =========================================================
+   DESKTOP CTA
+========================================================= */
+
+.nav-cta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 18px;
+
+    border:
+        1px solid rgba(201, 168, 106, 0.65);
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.nav-cta strong {
+
+    color: #c9a86a;
+
+}
+
+.nav-cta:hover {
+
+    background: #c9a86a;
+
+    border-color: #c9a86a;
+
+    color: #090909;
+
+}
+
+.nav-cta:hover strong {
+
+    color: #090909;
+
+}
+
+
+/* =========================================================
+   MOBILE BUTTON
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 10002;
+}
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 27px;
+    height: 1px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.menu-toggle span:nth-child(2) {
+
+    width: 19px;
+
+}
+
+
+/* =========================================================
+   MOBILE BUTTON ACTIVE
+========================================================= */
+
+.menu-toggle.active span:nth-child(1) {
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+.menu-toggle.active span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    background:
+        rgba(8, 8, 8, 0.98);
+
+    backdrop-filter:
+        blur(18px);
+
+    overflow-y: auto;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translateY(-20px);
+
+    z-index: 9998;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/* =========================================================
+   MOBILE MENU ACTIVE
+========================================================= */
+
+.mobile-menu.active {
+
+    display: block;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   MOBILE MENU INNER
+========================================================= */
+
+.mobile-menu-inner {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    margin:
+        100px auto 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   MOBILE NORMAL LINKS
+========================================================= */
+
+.mobile-menu-inner > a {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border: none;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN BUTTON
+========================================================= */
+
+.mobile-dropdown-toggle {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border: none;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.8px;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.mobile-dropdown-toggle:hover {
+
+    color: #c9a86a;
+
+}
+
+.mobile-dropdown-toggle strong {
+
+    color: #c9a86a;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN OPEN ICON
+========================================================= */
+
+.mobile-dropdown-toggle.active strong {
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN CONTENT
+========================================================= */
+
+.mobile-dropdown-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    padding-left: 20px;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN OPEN
+========================================================= */
+
+.mobile-dropdown-content.active {
+
+    max-height: 600px;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN LINKS
+========================================================= */
+
+.mobile-dropdown-content a {
+
+    display: block;
+
+    padding: 13px 0;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.mobile-dropdown-content a:hover {
+
+    color: #c9a86a;
+
+    padding-left: 7px;
+
+}
+
+
+/* =========================================================
+   MOBILE BOOK BUTTON
+========================================================= */
+
+.mobile-book-button {
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 16px !important;
+
+    background: #c9a86a !important;
+
+    color: #090909 !important;
+
+    border:
+        1px solid #c9a86a !important;
+
+    font-size: 10px !important;
+
+    text-decoration: none;
+
+}
+
+.mobile-book-button span {
+
+    color: #090909;
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .nav-menu,
+    .nav-cta {
+
+        display: none;
+
+    }
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+    .navbar {
+
+        width: 92%;
+
+        min-height: 80px;
+
+    }
+
+    .brand-logo {
+
+        width: 95px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .navbar {
+
+        width: 92%;
+
+        min-height: 70px;
+
+    }
+
+    .brand-logo {
+
+        width: 85px;
+
+    }
+
+    .menu-toggle {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .menu-toggle span {
+
+        width: 25px;
+
+    }
+
+    .menu-toggle span:nth-child(2) {
+
+        width: 18px;
+
+    }
+
+}
+/* =========================================================
+   FINAL NAVIGATION FIX
+========================================================= */
+
+.mobile-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+
+/* Desktop click dropdown support */
+
+@media (min-width: 993px) {
+
+    .nav-menu .dropdown > .dropdown-menu,
+    .nav-menu .mega-dropdown > .mega-menu {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .nav-menu .dropdown:hover > .dropdown-menu,
+    .nav-menu .dropdown.dropdown-open > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+    }
+
+    .nav-menu .mega-dropdown:hover > .mega-menu,
+    .nav-menu .mega-dropdown.dropdown-open > .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 992px) {
+
+    .nav-menu,
+    .nav-cta {
+        display: none !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .mobile-menu {
+        display: block !important;
+    }
+
+}
+
+
+/* Prevent background scrolling */
+
+body.mobile-menu-open {
+    overflow: hidden;
+}

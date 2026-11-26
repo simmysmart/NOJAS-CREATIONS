@@ -1,0 +1,1001 @@
+/* =========================================================
+   NOJA'S CREATIONS
+   CUSTOM DESIGN PAGE
+   CLEAN FINAL VERSION
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.custom-design-page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: visible;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.custom-design-hero {
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 120px 20px 80px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* Hero background effect */
+
+.custom-design-hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(201, 168, 106, 0.12),
+            transparent 60%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Hero content */
+
+.custom-design-hero .page-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+
+/* Hero label */
+
+.custom-design-hero .section-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+/* Hero heading */
+
+.custom-design-hero h1 {
+    margin: 0 0 20px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(
+            2.4rem,
+            6vw,
+            5rem
+        );
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+
+/* Hero paragraph */
+
+.custom-design-hero p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   REQUEST SECTION
+========================================================= */
+
+.custom-design-request-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 110px 20px;
+
+    background: var(--black);
+
+    overflow: hidden;
+}
+
+
+/* Decorative background */
+
+.custom-design-request-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -200px;
+
+    right: -200px;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201, 168, 106, 0.10),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.custom-design-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            1100px,
+            100%
+        );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.custom-design-intro {
+
+    max-width: 720px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.custom-design-intro .section-label {
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.custom-design-intro h2 {
+
+    margin: 0 0 18px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
+
+    font-weight: 400;
+
+    line-height: 1.15;
+}
+
+
+.custom-design-intro p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.custom-design-form {
+
+    position: relative;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 25px;
+
+    padding: 45px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.30);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.custom-design-form .form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+
+.custom-design-form .form-group-full {
+
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.custom-design-form label {
+
+    display: block;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.custom-design-form label span {
+
+    margin-left: 3px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.custom-design-form input,
+.custom-design-form select,
+.custom-design-form textarea {
+
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 16px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
+    cursor: text;
+}
+
+
+/* =========================================================
+   INPUT HEIGHT
+========================================================= */
+
+.custom-design-form input,
+.custom-design-form select {
+
+    min-height: 52px;
+}
+
+
+.custom-design-form textarea {
+
+    min-height: 170px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.custom-design-form input::placeholder,
+.custom-design-form textarea::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.custom-design-form select {
+
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+.custom-design-form select option {
+
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+.custom-design-form input[type="file"] {
+
+    cursor: pointer;
+
+    padding: 12px;
+}
+
+
+.custom-design-form input[type="file"]::file-selector-button {
+
+    margin-right: 12px;
+
+    padding: 9px 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.custom-design-form input:hover,
+.custom-design-form select:hover,
+.custom-design-form textarea:hover {
+
+    border-color:
+        rgba(201, 168, 106, 0.45);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.custom-design-form input:focus,
+.custom-design-form select:focus,
+.custom-design-form textarea:focus {
+
+    border-color: var(--gold);
+
+    background:
+        rgba(201, 168, 106, 0.04);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(201, 168, 106, 0.10);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.custom-design-form small {
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 0.78rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.custom-design-form .form-submit {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 15px;
+}
+
+
+.custom-design-form .form-submit button {
+
+    min-width: 220px;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.custom-design-form .form-submit button:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.custom-design-form .form-message {
+
+    grid-column: 1 / -1;
+
+    min-height: 24px;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.custom-design-form button.is-loading {
+
+    opacity: 0.65;
+
+    cursor: wait;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .custom-design-hero {
+
+        min-height: 360px;
+
+        padding:
+            110px 20px 70px;
+    }
+
+
+    .custom-design-request-section {
+
+        padding:
+            75px 18px;
+    }
+
+
+    .custom-design-form {
+
+        grid-template-columns: 1fr;
+
+        padding: 30px 22px;
+
+        gap: 22px;
+    }
+
+
+    .custom-design-form .form-group-full {
+
+        grid-column: auto;
+    }
+
+
+    .custom-design-form .form-submit {
+
+        grid-column: auto;
+    }
+
+
+    .custom-design-form .form-message {
+
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .custom-design-hero {
+
+        min-height: 330px;
+
+        padding:
+            100px 16px 60px;
+    }
+
+
+    .custom-design-request-section {
+
+        padding:
+            55px 14px;
+    }
+
+
+    .custom-design-form {
+
+        padding:
+            24px 16px;
+
+        border-radius: 14px;
+    }
+
+
+    .custom-design-form .form-submit button {
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+/* =========================================================
+   CUSTOM DESIGN — FORM INTERACTIONS
+========================================================= */
+
+.custom-design-form .form-group {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.custom-design-form .form-group.is-focused {
+    transform: translateY(-2px);
+}
+
+.custom-design-form input,
+.custom-design-form select,
+.custom-design-form textarea {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.custom-design-form input:hover,
+.custom-design-form select:hover,
+.custom-design-form textarea:hover {
+    border-color: rgba(201, 168, 106, 0.55);
+}
+
+.custom-design-form input:focus,
+.custom-design-form select:focus,
+.custom-design-form textarea:focus {
+    border-color: var(--gold);
+    background: rgba(201, 168, 106, 0.03);
+
+    box-shadow:
+        0 0 0 3px rgba(201, 168, 106, 0.10);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.custom-design-form .form-submit button {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.custom-design-form .form-submit button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.custom-design-form .form-submit button:active {
+    transform: translateY(-1px);
+}
+
+.custom-design-form .form-submit button:disabled {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.custom-design-form .form-message {
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.custom-design-form .form-message.success {
+    color: #6fcf97;
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.custom-design-form .form-message.error {
+    color: #ff7676;
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.design-image-preview {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: 1px solid
+        rgba(201, 168, 106, 0.25);
+
+    border-radius: 12px;
+
+    background:
+        rgba(201, 168, 106, 0.04);
+
+    animation:
+        designPreviewIn 0.35s ease forwards;
+}
+
+.design-image-preview img {
+    width: 75px;
+
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.design-image-preview span {
+    font-size: 0.85rem;
+
+    opacity: 0.75;
+
+    word-break: break-word;
+}
+
+
+@keyframes designPreviewIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.custom-design-form button.is-loading {
+    position: relative;
+
+    opacity: 0.7;
+
+    cursor: wait;
+}
+/* =========================================================
+   CUSTOM DESIGN SUBMIT BUTTON
+========================================================= */
+
+.custom-design-form .custom-submit-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    min-width: 240px;
+
+    min-height: 54px;
+
+    padding: 15px 24px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 0;
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    font-family: var(--sans);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.custom-design-form .custom-submit-button span {
+    display: inline-block;
+
+    color: inherit;
+}
+
+
+.custom-design-form .custom-submit-button strong {
+    display: inline-block;
+
+    color: inherit;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.custom-design-form .custom-submit-button:hover {
+    background: transparent;
+
+    color: var(--gold);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+.custom-design-form .custom-submit-button:hover strong {
+    transform: translate(4px, -4px);
+}
+
+
+.custom-design-form .custom-submit-button:active {
+    transform: translateY(0);
+}
+
+
+.custom-design-form .custom-submit-button:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SUBMIT AREA
+========================================================= */
+
+.custom-design-form .form-submit {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 70px;
+
+    padding-top: 15px;
+
+    position: relative;
+
+    z-index: 50;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .custom-design-form .custom-submit-button {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NOJA'S CREATIONS — Contemporary fashion, custom designs and timeless elegance.">
+    <meta name="keywords" content="NOJA'S CREATIONS, fashion, clothing, designer, African fashion, custom design">
+    <meta name="author" content="NOJA'S CREATIONS">
+    <meta name="theme-color" content="#080808">
+    <title>NOJA'S CREATIONS | Fashion & Design</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/product.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    <link rel="stylesheet" href="css/components/gallery.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ===== FIX 1: LOGO - Remove grey box ===== */
+        .brand-logo img, .footer-logo{
+            background: transparent !important;
+            mix-blend-mode: screen;
+            border-radius: 0 !important;
+        }
+        .brand-logo{ background: transparent !important; }
+        /* ===== FIX 2: HERO BUTTONS - Big & Visible ===== */
+        .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-top:28px; }
+        .hero-actions .primary-button{
+            background:#C9A86A !important; color:#111 !important;
+            padding:16px 30px !important; border-radius:50px !important;
+            font-weight:700 !important; font-size:15px !important;
+            text-decoration:none !important; display:inline-flex; align-items:center; gap:8px;
+            box-shadow:0 8px 25px rgba(201,168,106,.4);
+        }
+        .hero-actions .primary-button:hover{ background:#e0c084 !important; transform:translateY(-2px); }
+        .hero-actions .secondary-button{
+            background:transparent !important; color:#fff !important;
+            border:1.5px solid #fff !important;
+            padding:16px 30px !important; border-radius:50px !important;
+            font-weight:600 !important; font-size:15px !important;
+            text-decoration:none !important; display:inline-flex; align-items:center;
+        }
+        .hero-actions .secondary-button:hover{ background:#fff !important; color:#111 !important; }
+        /* ===== FIX 3: NAV CTA - Gold & Visible ===== */
+        .nav-cta{
+            background:#C9A86A !important; color:#111 !important;
+            padding:11px 20px !important; border-radius:50px !important;
+            font-weight:700 !important; text-decoration:none !important;
+        }
+        /* ===== FIX 4: TRUST BAR ===== */
+        .trust-bar{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; background:#0f0f0f; color:#C9A86A; padding:14px 20px; font-size:13px; letter-spacing:.5px; font-weight:600; text-align:center; }
+        .trust-bar span{ white-space:nowrap; }
+        /* ===== FIX 5: FLOATING WHATSAPP ===== */
+        .wa-float{ position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:14px 20px; border-radius:50px; font-weight:700; text-decoration:none; z-index:9999; box-shadow:0 4px 18px rgba(0,0,0,.35); display:flex; align-items:center; gap:8px; font-family:Inter,sans-serif; font-size:14px; }
+        .wa-float:hover{ background:#1eb856; }
+        @media(max-width:600px){ .hero-actions{ flex-direction:column; } .hero-actions a{ justify-content:center; width:100%; } .trust-bar{ gap:12px; font-size:12px; } }
+    </style>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-logo">NOJA'S</div>
+        <div class="loader-line"></div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="brand-logo" aria-label="NOJA'S CREATIONS Home">
+                <img src="assets/images/logo.jpg" alt="NOJA'S CREATIONS">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="pages/about.html" class="nav-link" aria-haspopup="true">About <span class="dropdown-icon" aria-hidden="true">+</span></a>
+                    <div class="dropdown-menu">
+                        <a href="pages/about.html">Our Story</a>
+                        <a href="pages/about.html#philosophy">Our Philosophy</a>
+                        <a href="pages/about.html#designer">The Designer</a>
+                    </div>
+                </li>
+                <li class="nav-item mega-dropdown">
+                    <a href="pages/collections.html" class="nav-link" aria-haspopup="true">Collections <span class="dropdown-icon" aria-hidden="true">+</span></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-intro">
+                            <span class="menu-label">EXPLORE</span>
+                            <h3>Our <em>Collections</em></h3>
+                            <p>Discover carefully crafted designs created to express confidence, elegance and individuality.</p>
+                            <a href="pages/collections.html" class="menu-view-all">View All Collections <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <div class="mega-menu-links">
+                            <a href="pages/collections.html#signature"><span>01</span> Signature Collection</a>
+                            <a href="pages/collections.html#traditional"><span>02</span> Traditional Wear</a>
+                            <a href="pages/collections.html#ankara"><span>03</span> Ankara Collection</a>
+                            <a href="pages/collections.html#evening"><span>04</span> Evening Wear</a>
+                            <a href="pages/collections.html#bridal"><span>05</span> Bridal Collection</a>
+                            <a href="pages/collections.html#agbada"><span>06</span> Agbada Collection</a>
+                            <a href="pages/collections.html#latest"><span>07</span> Latest Designs</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="pages/custom-design.html" class="nav-link">Custom Design</a></li>
+                <li class="nav-item"><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item dropdown">
+                    <a href="pages/contact.html" class="nav-link" aria-haspopup="true">Contact <span class="dropdown-icon" aria-hidden="true">+</span></a>
+                    <div class="dropdown-menu">
+                        <a href="https://wa.me/2349150481950" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        <a href="mailto:nojascreations@gmail.com">Email Us</a>
+                        <a href="tel:+2349150481950">Call Us</a>
+                        <a href="pages/contact.html">Send Enquiry</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="pages/custom-design.html" class="nav-cta"><span>Book a Design</span> <strong aria-hidden="true">↗</strong></a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <div class="mobile-menu-inner">
+                <a href="index.html" class="mobile-link">Home</a>
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false"><span>About</span> <strong aria-hidden="true">+</strong></button>
+                <div class="mobile-dropdown-content">
+                    <a href="pages/about.html">Our Story</a>
+                    <a href="pages/about.html#philosophy">Our Philosophy</a>
+                    <a href="pages/about.html#designer">The Designer</a>
+                </div>
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false"><span>Collections</span> <strong aria-hidden="true">+</strong></button>
+                <div class="mobile-dropdown-content">
+                    <a href="pages/collections.html#signature">Signature Collection</a>
+                    <a href="pages/collections.html#traditional">Traditional Wear</a>
+                    <a href="pages/collections.html#ankara">Ankara Collection</a>
+                    <a href="pages/collections.html#evening">Evening Wear</a>
+                    <a href="pages/collections.html#bridal">Bridal Collection</a>
+                    <a href="pages/collections.html#agbada">Agbada Collection</a>
+                    <a href="pages/collections.html#latest">Latest Designs</a>
+                </div>
+                <a href="pages/custom-design.html" class="mobile-link">Custom Design</a>
+                <a href="pages/gallery.html" class="mobile-link">Gallery</a>
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false"><span>Contact</span> <strong aria-hidden="true">+</strong></button>
+                <div class="mobile-dropdown-content">
+                    <a href="https://wa.me/2349150481950" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="mailto:nojascreations@gmail.com">Email Us</a>
+                    <a href="tel:+2349150481950">Call Us</a>
+                    <a href="pages/contact.html">Send Enquiry</a>
+                </div>
+                <a href="pages/custom-design.html" class="mobile-book-button"><span>Book a Design</span> <strong aria-hidden="true">↗</strong></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-background"><img src="assets/images/hero/hero-main.jpg" alt="" aria-hidden="true"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-content">
+                <span class="hero-label">FASHION • ART • IDENTITY</span>
+                <h1>Wear Your <span>Story.</span></h1>
+                <p class="hero-description">Thoughtfully crafted fashion designed to express elegance, confidence and individuality.</p>
+                <div class="hero-actions">
+                    <a href="pages/collections.html" class="primary-button"><span>Explore Collection</span> <strong aria-hidden="true">↗</strong></a>
+                    <a href="pages/custom-design.html" class="secondary-button">Create Your Design ✎</a>
+                </div>
+            </div>
+            <div class="hero-footer"><span>SCROLL TO EXPLORE</span><div class="scroll-indicator" aria-hidden="true"></div><span>01 / 04</span></div>
+        </section>
+
+        <!-- NEW: TRUST BAR -->
+        <div class="trust-bar"><span>✦ Made in Nigeria</span><span>✦ Custom Fit For You</span><span>✦ Nationwide Delivery</span><span>✦ Order via WhatsApp</span></div>
+
+        <section class="brand-intro" id="about-preview">
+            <div class="section-container">
+                <div class="section-label"><span>01</span> ABOUT NOJA'S</div>
+                <div class="intro-grid">
+                    <h2>Fashion is more than what you <em>wear.</em></h2>
+                    <div class="intro-text">
+                        <p>NOJA'S CREATIONS is a fashion brand dedicated to creating distinctive pieces that bring together culture, creativity and contemporary style.</p>
+                        <a href="pages/about.html" class="text-link"><span>Discover Our Story</span> <strong aria-hidden="true">→</strong></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section" id="featured">
+            <div class="section-container">
+                <div class="section-heading">
+                    <div><span class="section-number">02</span><p>THE COLLECTION</p><h2>Featured <em>Pieces</em></h2></div>
+                    <a href="pages/collections.html" class="outline-button"><span>View All</span> <strong aria-hidden="true">↗</strong></a>
+                </div>
+                <div class="featured-grid" id="featuredProducts">
+                    <article class="featured-card large-card">
+                        <a href="pages/product.html" class="product-image" aria-label="View Signature Elegance"><img src="assets/images/products/signature/signature-02.jpeg" alt="Signature Elegance" loading="lazy"></a>
+                        <div class="product-info"><span>SIGNATURE</span><h3>Signature Elegance</h3></div>
+                    </article>
+                    <article class="featured-card">
+                        <a href="pages/product.html" class="product-image" aria-label="View Modern Expression"><img src="assets/images/products/ankara/ankara-05.jpeg" alt="Modern Expression" loading="lazy"></a>
+                        <div class="product-info"><span>CONTEMPORARY</span><h3>Modern Expression</h3></div>
+                    </article>
+                    <article class="featured-card">
+                        <a href="pages/product.html" class="product-image" aria-label="View Heritage Collection"><img src="assets/images/products/traditional/traditional-01.jpeg" alt="Heritage Collection" loading="lazy"></a>
+                        <div class="product-info"><span>HERITAGE</span><h3>Heritage Collection</h3></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="custom-design-section" id="custom-design-preview">
+            <div class="custom-design-content">
+                <span>YOUR VISION • OUR CRAFT</span>
+                <h2>Have a design <em>in mind?</em></h2>
+                <p>Tell us what you envision and let us transform your idea into something uniquely yours.</p>
+                <a href="pages/custom-design.html" class="primary-button"><span>Request a Custom Design</span> <strong aria-hidden="true">↗</strong></a>
+            </div>
+        </section>
+
+        <section class="contact-preview" id="contact-preview">
+            <div class="section-container">
+                <div class="section-label"><span>03</span> LET'S CONNECT</div>
+                <div class="contact-grid">
+                    <h2>Let's create something <em>beautiful.</em></h2>
+                    <div class="contact-links">
+                        <a href="https://wa.me/2349150481950" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span> <strong aria-hidden="true">↗</strong></a>
+                        <a href="mailto:nojascreations@gmail.com"><span>Email Us</span> <strong aria-hidden="true">↗</strong></a>
+                        <a href="tel:+2349150481950"><span>Call Us</span> <strong aria-hidden="true">↗</strong></a>
+                        <a href="pages/contact.html"><span>Send Enquiry</span> <strong aria-hidden="true">↗</strong></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" aria-label="NOJA'S CREATIONS Home"><img src="assets/images/logo.jpg" alt="NOJA'S CREATIONS" class="footer-logo"></a>
+                    <p>Fashion crafted with intention.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/nojascreations" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+                    <a href="https://web.facebook.com/able.crouch" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+                    <a href="https://wa.me/2349150481950" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 NOJA'S CREATIONS</span><span>Developed by SimmySmart_Tech</span><span>ALL RIGHTS RESERVED</span></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/collections.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/custom-design.js"></script>
+    <script src="js/contact.js"></script>
+
+    <!-- FIXED WhatsApp Float - removed + sign -->
+    <a class="wa-float" href="https://wa.me/2349150481950?text=Hi%20NOJA'S!%20I%20want%20to%20order" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+</body>
+</html>

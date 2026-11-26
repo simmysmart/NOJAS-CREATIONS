@@ -1,0 +1,632 @@
+/* =========================================================
+   NOJA'S CREATIONS
+   RESPONSIVE STYLESHEET
+   DESKTOP • TABLET • MOBILE
+========================================================= */
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .section-container {
+        width: min(1380px, calc(100% - 100px));
+    }
+
+    .hero-content {
+        max-width: 750px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        width: calc(100% - 50px);
+    }
+
+    .nav-menu {
+        gap: 24px;
+        margin-right: 25px;
+    }
+
+    .nav-link {
+        font-size: 9px;
+    }
+
+    .nav-cta {
+        padding: 12px 15px;
+        font-size: 8px;
+    }
+
+    .mega-menu {
+        width: min(720px, 90vw);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    /* -----------------------------------------------------
+       NAVIGATION
+    ----------------------------------------------------- */
+
+    .nav-menu,
+    .nav-cta {
+        display: none !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .navbar {
+        width: 92%;
+        min-height: 80px;
+    }
+
+    .brand-logo {
+        width: 95px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU
+    ----------------------------------------------------- */
+
+    .mobile-menu {
+        display: block !important;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-content {
+        width: 90%;
+        max-width: 700px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            50px,
+            8vw,
+            90px
+        );
+    }
+
+    .hero-description {
+        max-width: 550px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+    ----------------------------------------------------- */
+
+    .section-container {
+        width: 90%;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO
+    ----------------------------------------------------- */
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURED PRODUCTS
+    ----------------------------------------------------- */
+
+    .featured-grid {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer-main {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar {
+        width: 92%;
+        min-height: 74px;
+    }
+
+    .brand-logo {
+        width: 90px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU
+    ----------------------------------------------------- */
+
+    .mobile-menu-inner {
+        width: 90%;
+        margin-top: 90px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-content {
+        width: 88%;
+        padding-top: 60px;
+    }
+
+    .hero-label {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            46px,
+            12vw,
+            70px
+        );
+
+        line-height: 1;
+    }
+
+    .hero-description {
+        width: 100%;
+        max-width: 500px;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO BUTTONS
+    ----------------------------------------------------- */
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hero-actions a {
+        width: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO FOOTER
+    ----------------------------------------------------- */
+
+    .hero-footer {
+        width: 88%;
+
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION
+    ----------------------------------------------------- */
+
+    .section-container {
+        width: 90%;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION HEADINGS
+    ----------------------------------------------------- */
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO
+    ----------------------------------------------------- */
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-grid h2 {
+        font-size: clamp(
+            35px,
+            9vw,
+            55px
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURED PRODUCTS
+    ----------------------------------------------------- */
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-card.large-card {
+        grid-column: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       PRODUCT IMAGE
+    ----------------------------------------------------- */
+
+    .product-image {
+        min-height: 400px;
+    }
+
+
+    /* -----------------------------------------------------
+       CUSTOM DESIGN
+    ----------------------------------------------------- */
+
+    .custom-design-content {
+        width: 88%;
+    }
+
+    .custom-design-content h2 {
+        font-size: clamp(
+            38px,
+            10vw,
+            60px
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-grid h2 {
+        font-size: clamp(
+            38px,
+            10vw,
+            60px
+        );
+    }
+
+    .contact-links {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-socials {
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar {
+        width: 92%;
+        min-height: 68px;
+    }
+
+    .brand-logo {
+        width: 82px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        width: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU
+    ----------------------------------------------------- */
+
+    .mobile-menu-inner {
+        width: 90%;
+        margin-top: 82px;
+        margin-bottom: 40px;
+    }
+
+    .mobile-menu-inner > a,
+    .mobile-dropdown-toggle {
+        padding: 17px 0;
+
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .mobile-dropdown-content {
+        padding-left: 15px;
+    }
+
+    .mobile-dropdown-content a {
+        padding: 11px 0;
+        font-size: 9px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-content {
+        width: 88%;
+        padding-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            42px,
+            13vw,
+            60px
+        );
+    }
+
+    .hero-description {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO ACTIONS
+    ----------------------------------------------------- */
+
+    .hero-actions {
+        width: 100%;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO FOOTER
+    ----------------------------------------------------- */
+
+    .hero-footer {
+        width: 88%;
+        bottom: 20px;
+    }
+
+    .hero-footer span:first-child {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+    ----------------------------------------------------- */
+
+    .section-container {
+        width: 88%;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION LABEL
+    ----------------------------------------------------- */
+
+    .section-label {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+
+    /* -----------------------------------------------------
+       INTRO
+    ----------------------------------------------------- */
+
+    .intro-grid h2 {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .intro-text p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       FEATURED SECTION
+    ----------------------------------------------------- */
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+
+    .product-image {
+        min-height: 350px;
+    }
+
+
+    /* -----------------------------------------------------
+       PRODUCT INFO
+    ----------------------------------------------------- */
+
+    .product-info h3 {
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       CUSTOM DESIGN
+    ----------------------------------------------------- */
+
+    .custom-design-content {
+        width: 88%;
+    }
+
+    .custom-design-content h2 {
+        font-size: 38px;
+    }
+
+    .custom-design-content p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-grid h2 {
+        font-size: 38px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer-logo {
+        width: 90px;
+    }
+
+    .footer-socials {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .brand-logo {
+        width: 75px;
+    }
+
+    .mobile-menu-inner > a,
+    .mobile-dropdown-toggle {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .intro-grid h2,
+    .section-heading h2,
+    .custom-design-content h2,
+    .contact-grid h2 {
+        font-size: 34px;
+    }
+
+    .product-image {
+        min-height: 300px;
+    }
+
+}
+
